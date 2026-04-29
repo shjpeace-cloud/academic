@@ -87,12 +87,12 @@ function formatPub(p) {
     : `"${p.title}"`;
 
   if (p.type === 'book') {
-    // Book chapter: no quotes, italic book title
+    // Book or book chapter: authors + year + title, italic book title for chapters
     const chTitle = p.url
       ? `<a href="${p.url}" target="_blank">${p.title}</a>`
       : p.title;
-    let bookLine = chTitle;
-    if (p.editor) bookLine += `. ${p.editor},`;
+    let bookLine = `${p.authors}. ${yearStr} ${chTitle}.`;
+    if (p.editor) bookLine += ` ${p.editor},`;
     if (p.book) bookLine += ` <em>${p.book}</em>.`;
     if (p.publisher) bookLine += ` ${p.publisher}.`;
     if (p.note) bookLine += ` (${p.note})`;
