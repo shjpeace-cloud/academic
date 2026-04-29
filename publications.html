@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Seungho Jung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Seungho Jung</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <h1>Publications</h1>
+  <p style="color:var(--text-muted); margin-bottom:2rem;">
+    See also: <a href="https://scholar.google.com/citations?hl=en&user=h8OtoqAAAAAJ" target="_blank">Google Scholar profile</a>
+  </p>
+
+  <div class="pub-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="journal-en">English Journals</button>
+    <button class="filter-btn" data-filter="journal-kr">Korean Journals</button>
+    <button class="filter-btn" data-filter="commentary-en">Commentaries</button>
+    <button class="filter-btn" data-filter="report-en report-kr">Policy Reports</button>
+    <button class="filter-btn" data-filter="working-paper">Working Papers</button>
+    <button class="filter-btn" data-filter="book">Books & Chapters</button>
+  </div>
+
+  <div id="pub-list"></div>
+</main>
+
+<footer>
+  &copy; 2026 Seungho Jung · Incheon National University
+</footer>
+
+<script>
+const SECTION_LABELS = {
+  'journal-en':    'Peer-reviewed Articles (English)',
+  'journal-kr':    'Peer-reviewed Articles (Korean)',
+  'commentary-en': 'Commentaries & Policy Briefs (English)',
+  'report-en':     'Policy Reports (English)',
+  'report-kr':     'Policy Reports (Korean)',
+  'working-paper': 'Working Papers',
+  'book':          'Books & Book Chapters'
+};
+
+const SECTION_ORDER = [
+  'journal-en', 'journal-kr', 'commentary-en',
+  'report-en', 'report-kr', 'working-paper', 'book'
+];
+
+function formatPub(p) {
+  const parts = [];
+
+  // Authors
+  parts.push(`${p.authors}.`);
+
+  // Year + month
+  const yearStr = p.month ? `${p.year}.${p.month}.` : `${p.year}.`;
+  parts.push(yearStr);
+
+  // Title (linked if url provided)
+  const titleStr = p.url
+    ? `"<a href="${p.url}" target="_blank">${p.title}</a>"`
+    : `"${p.title}"`;
+
+  if (p.type === 'book') {
+    // Book chapter: no quotes, italic book title
+    const chTitle = p.url
+      ? `<a href="${p.url}" target="_blank">${p.title}</a>`
+      : p.title;
+    let bookLine = chTitle;
+    if (p.editor) bookLine += `. ${p.editor},`;
+    if (p.book) bookLine += ` <em>${p.book}</em>.`;
+    if (p.publisher) bookLine += ` ${p.publisher}.`;
+    if (p.note) bookLine += ` (${p.note})`;
+    return bookLine;
+  }
+
+  let line = `${p.authors}. ${yearStr} ${titleStr}`;
+  if (p.note) line += ` ${p.note}`;
+  line += `.`;
+
+  // Journal (italic)
+  if (p.journal) line += ` <em>${p.journal}</em>`;
+
+  // Volume/issue/pages
+  if (p.volume && p.issue) line += `, ${p.volume}(${p.issue})`;
+  else if (p.volume) line += `, ${p.volume}`;
+
+  if (p.pages) line += `, ${p.pages}`;
+  if (p.year_label) line += ` ${p.year_label}`;
+  if (p.publisher) line += `, ${p.publisher}`;
+  if (p.note && p.type !== 'journal-en') line += ` ${p.note}`;
+
+  // DOI
+  if (p.doi) line += `. DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>`;
+
+  line += `.`;
+  return line;
+}
+
+function buildLinks(p) {
+  const links = [];
+  if (p.kr_url) links.push(`<a class="pub-link" href="${p.kr_url}" target="_blank">Korean version (EAI)</a>`);
+  if (p.extra_url) links.push(`<a class="pub-link" href="${p.extra_url}" target="_blank">${p.extra_label || 'Link'}</a>`);
+  return links.length ? `<div class="pub-links">${links.join('')}</div>` : '';
+}
+
+function renderSection(pubs, type, activeFilter) {
+  const filtered = activeFilter === 'all'
+    ? pubs.filter(p => p.type === type)
+    : pubs.filter(p => activeFilter.split(' ').includes(p.type) && p.type === type);
+
+  if (!filtered.length) return '';
+
+  const items = filtered.map(p => `
+    <div class="pub-item">
+      ${formatPub(p)}
+      ${buildLinks(p)}
+    </div>
+  `).join('');
+
+  return `
+    <div class="pub-section" data-type="${type}">
+      <div class="pub-section-title">${SECTION_LABELS[type]}</div>
+      ${items}
+    </div>
+  `;
+}
+
+async function init() {
+  const res = await fetch('data/publications.json');
+  const pubs = await res.json();
+
+  const filters = document.querySelectorAll('.filter-btn');
+  const container = document.getElementById('pub-list');
+
+  function render(activeFilter) {
+    container.innerHTML = SECTION_ORDER
+      .map(type => renderSection(pubs, type, activeFilter))
+      .join('');
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render('all');
+}
+
+init();
+</script>
+</body>
+</html>
