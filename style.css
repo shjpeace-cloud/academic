@@ -18,7 +18,11 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html {
+  font-size: clamp(14.5px, 14px + 0.25vw, 17px);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   font-family: var(--font-sans);
@@ -26,6 +30,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── Navigation ── */
@@ -35,7 +40,7 @@ nav {
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 0.5rem + 1.5vw, 2rem);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -48,33 +53,38 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .nav-brand {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   gap: 0;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links a {
   display: block;
-  padding: 0.4rem 0.85rem;
-  font-size: 0.875rem;
+  padding: 0.4rem clamp(0.5rem, 0.3rem + 0.4vw, 0.85rem);
+  font-size: clamp(0.78rem, 0.74rem + 0.15vw, 0.9rem);
   font-weight: 400;
   color: var(--text-muted);
   text-decoration: none;
   border-radius: 6px;
   transition: color 0.15s, background 0.15s;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -87,13 +97,16 @@ nav {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 2rem 5rem;
+  padding:
+    clamp(2rem, 1.5rem + 1.5vw, 3rem)
+    clamp(1.1rem, 0.5rem + 1.5vw, 2rem)
+    clamp(3rem, 4vw, 5rem);
 }
 
 /* ── Typography ── */
 h1 {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.15rem);
   font-weight: 600;
   line-height: 1.25;
   color: var(--accent);
@@ -103,17 +116,17 @@ h1 {
 
 h2 {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 0.95rem + 0.55vw, 1.3rem);
   font-weight: 600;
   color: var(--text);
   margin-bottom: 1rem;
-  margin-top: 2.5rem;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border);
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: clamp(0.82rem, 0.78rem + 0.1vw, 0.92rem);
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -121,7 +134,10 @@ h3 {
   margin-bottom: 1rem;
 }
 
-p { margin-bottom: 1rem; font-size: 0.95rem; }
+p {
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 0.98rem);
+}
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -130,16 +146,16 @@ a:hover { text-decoration: underline; }
 .hero {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2rem;
+  gap: clamp(1.25rem, 0.5rem + 2vw, 2rem);
   align-items: start;
-  padding: 2.5rem 0 3rem;
+  padding: clamp(1.75rem, 4vw, 2.5rem) 0 clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--border);
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 .hero-photo {
-  width: 120px;
-  height: 120px;
+  width: clamp(86px, 14vw, 120px);
+  height: clamp(86px, 14vw, 120px);
   border-radius: 4px;
   object-fit: cover;
   border: 1px solid var(--border);
@@ -147,7 +163,7 @@ a:hover { text-decoration: underline; }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.85rem);
   font-weight: 600;
   color: var(--accent);
   line-height: 1.2;
@@ -156,27 +172,27 @@ a:hover { text-decoration: underline; }
 
 .hero-name-kr {
   font-family: 'Noto Serif KR', serif;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1.05rem);
   color: var(--text-muted);
   margin-bottom: 0.75rem;
   font-weight: 400;
 }
 
 .hero-position {
-  font-size: 0.9rem;
+  font-size: clamp(0.84rem, 0.8rem + 0.2vw, 0.95rem);
   color: var(--text-muted);
   margin-bottom: 0.2rem;
 }
 
 .hero-links {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 .hero-links a {
-  font-size: 0.8rem;
+  font-size: clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem);
   padding: 0.3rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -200,12 +216,12 @@ a:hover { text-decoration: underline; }
   gap: 1rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
 }
 
 .news-date {
   color: var(--text-light);
-  font-size: 0.8rem;
+  font-size: clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem);
   padding-top: 0.1rem;
 }
 
@@ -219,7 +235,7 @@ a:hover { text-decoration: underline; }
 
 .filter-btn {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem);
   padding: 0.35rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -251,7 +267,7 @@ a:hover { text-decoration: underline; }
 .pub-item {
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
   line-height: 1.65;
 }
 
@@ -287,7 +303,7 @@ a:hover { text-decoration: underline; }
 .research-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
   margin-bottom: 2rem;
 }
 
@@ -295,42 +311,77 @@ a:hover { text-decoration: underline; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1.25rem;
+  padding: clamp(1rem, 0.75rem + 1vw, 1.4rem);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.research-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 1px 4px rgba(26, 58, 92, 0.08);
 }
 
 .research-card-title {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.92rem);
   font-weight: 500;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
-.research-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+.research-card p {
+  font-size: clamp(0.82rem, 0.78rem + 0.15vw, 0.9rem);
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.research-card-latest {
+  margin-top: 0.7rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed var(--border);
+  font-size: clamp(0.76rem, 0.74rem + 0.1vw, 0.83rem);
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.research-card-latest-label {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  margin-right: 0.35rem;
+}
+
+.research-card-latest a { color: var(--accent); }
 
 /* ── Teaching ── */
 .course-item {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: clamp(1.1rem, 0.75rem + 1.2vw, 1.5rem);
   margin-bottom: 1rem;
 }
 
 .course-title {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: clamp(0.96rem, 0.9rem + 0.3vw, 1.1rem);
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.2rem;
 }
 
 .course-meta {
-  font-size: 0.8rem;
+  font-size: clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem);
   color: var(--text-light);
   margin-bottom: 0.75rem;
 }
 
-.course-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0; }
+.course-desc {
+  font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.9rem);
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
 
 /* ── CV ── */
 .cv-section { margin-bottom: 2rem; }
@@ -341,10 +392,13 @@ a:hover { text-decoration: underline; }
   gap: 1rem;
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
 }
 
-.cv-year { color: var(--text-light); font-size: 0.85rem; }
+.cv-year {
+  color: var(--text-light);
+  font-size: clamp(0.78rem, 0.76rem + 0.1vw, 0.88rem);
+}
 
 .cv-download {
   display: inline-flex;
@@ -354,7 +408,7 @@ a:hover { text-decoration: underline; }
   color: white;
   padding: 0.6rem 1.25rem;
   border-radius: 6px;
-  font-size: 0.875rem;
+  font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.9rem);
   margin-bottom: 2rem;
   transition: opacity 0.15s;
 }
@@ -364,20 +418,65 @@ a:hover { text-decoration: underline; }
 /* ── Footer ── */
 footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
+  padding: 2rem clamp(1rem, 4vw, 2rem);
+  font-size: clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem);
   color: var(--text-light);
   border-top: 1px solid var(--border);
   margin-top: 3rem;
 }
 
-/* ── Responsive ── */
+/* ── Responsive breakpoints ──
+   Tablet (≤768px): tighter nav
+   Mobile  (≤640px): hide redundant nav-brand; 5 links fill the bar evenly
+   Small   (≤380px): tighter link padding/font + stacked news/cv items   */
+
+@media (max-width: 768px) {
+  :root { --nav-height: 58px; }
+  h2 { margin-top: 2rem; }
+}
+
 @media (max-width: 640px) {
-  main { padding: 2rem 1.25rem 4rem; }
+  /* Nav-brand ("Seungho Jung") is hidden — the page already shows the name,
+     so removing it from the menu frees space for all 5 links to fit on phones. */
+  :root { --nav-height: 56px; }
+  nav {
+    height: auto;
+    min-height: var(--nav-height);
+    padding: 0 0.6rem;
+  }
+  .nav-inner {
+    gap: 0;
+    height: 100%;
+  }
+  .nav-brand { display: none; }
+  .nav-links {
+    flex: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .nav-links a {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
   .hero { grid-template-columns: 1fr; gap: 1rem; }
-  .hero-photo { width: 90px; height: 90px; }
-  h1 { font-size: 1.5rem; }
   .research-grid { grid-template-columns: 1fr; }
-  .nav-links a { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
-  .cv-item { grid-template-columns: 80px 1fr; }
+  .cv-item { grid-template-columns: 80px 1fr; gap: 0.75rem; }
+  .news-item { grid-template-columns: 64px 1fr; gap: 0.65rem; }
+  .pub-filters { gap: 0.4rem; }
+  .filter-btn { padding: 0.3rem 0.7rem; }
+}
+
+@media (max-width: 380px) {
+  nav { padding: 0 0.4rem; }
+  .nav-links a { padding: 0.4rem 0.35rem; font-size: 0.78rem; }
+  .hero-links { gap: 0.4rem; }
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding: 0.7rem 0;
+  }
+  .news-date { font-size: 0.72rem; }
+  .cv-item { grid-template-columns: 70px 1fr; gap: 0.55rem; }
 }
