@@ -22,3 +22,7 @@ node_modules/
 
 # Daily Claude Code worklog — kept local only (consistent with timesheet repo).
 .claude/worklog/
+
+# Time-stats integration: place timesheet JSON backups here for local-only
+# integrated analysis (scenario A). Not pushed to public repo.
+.timesheet-stats/
