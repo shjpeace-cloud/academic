@@ -15,3 +15,7 @@ node_modules/
 
 # Claude Code local-only settings (per-machine permissions)
 .claude/settings.local.json
+
+# Personal career consulting data — must NOT be in public repo.
+# Move to a separate PRIVATE repo. Local files retained for migration.
+.claude/career/
