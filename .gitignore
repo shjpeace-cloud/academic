@@ -19,3 +19,6 @@ node_modules/
 # Personal career consulting data — must NOT be in public repo.
 # Move to a separate PRIVATE repo. Local files retained for migration.
 .claude/career/
+
+# Daily Claude Code worklog — kept local only (consistent with timesheet repo).
+.claude/worklog/
