@@ -1,25 +1,30 @@
 [
   {
-    "title": "Assessment of the 9th Korean Workers' Party Congress Economic Strategy",
+    "title": "The Long-Term Effects of the 1990s North Korean Famine on Health and Labor Market Outcomes",
     "year": 2026,
-    "journal": "KDI North Korean Economic Review",
-    "meta": "2026 · KDI North Korean Economic Review",
-    "description": "Comparative analysis of economic directives from the 7th, 8th, and 9th Party Congresses, focusing on the shift from aggressive growth targets to stability-oriented &ldquo;qualitative development&rdquo; under conditions of domestic fiscal constraint and external geopolitical uncertainty.",
-    "tags": ["party congress", "economic plan", "북한경제"]
+    "meta": "Working paper",
+    "description": "Studies how early-life exposure to the 1990s North Korean famine affected the later-life health and labor-market outcomes of North Korean defectors. Using South Korea&rsquo;s National Health Insurance Service (NHIS) data, the project compares famine-exposed cohorts with other defector cohorts and matched South Korean residents, with adult height as a proxy for early-life nutrition, and estimates effects on disease prevalence, employment, occupational status, and income.",
+    "tags": ["famine", "early-life shock", "defectors", "health status", "labor market", "북한이탈주민", "고난의 행군"]
   },
   {
-    "title": "Health and Economic Assimilation of North Korean Defectors",
+    "title": "Health Assimilation among North Korean Defectors in South Korea",
     "year": 2026,
-    "journal": "Asian Perspective",
-    "meta": "Forthcoming · Asian Perspective, Vol. 50, No. 3",
-    "description": "Joint work with Jongmin Lee and HyeSeung Wee examining how physical and mental health status shape labor-market and economic outcomes for North Korean defectors after resettlement in South Korea.",
-    "tags": ["defectors", "health status", "assimilation", "북한이탈주민"]
+    "meta": "Working paper",
+    "description": "Analyzes how the health status of North Korean defectors changes after resettlement in South Korea, using NHIS administrative data from 2002 to 2024. Compares defectors with matched South Korean residents on chronic diseases, mental health, biomarkers, and health behaviors, and examines whether health gaps narrow or widen over time and across local socioeconomic conditions.",
+    "tags": ["defectors", "health status", "assimilation", "mental health", "북한이탈주민", "정착"]
   },
   {
-    "title": "Economic Implications of North Korea–Russia Cooperation",
+    "title": "The Causes of Anti-Unification Sentiment in South Korea",
     "year": 2026,
-    "meta": "Ongoing",
-    "description": "Extension of recent work (<em>Korean Journal of Defense Analysis</em>, 2024) on the economic dimensions of strengthened North Korea&ndash;Russia ties amid the Russia&ndash;Ukraine war, including trade flows, labor exports, and the broader sanctions-evasion landscape.",
-    "tags": ["russia", "russia-ukraine", "sanctions", "북중러"]
+    "meta": "Working paper",
+    "description": "Examines why negative attitudes toward Korean unification have increased in South Korea, especially among younger generations. Using survey data on more than 15,000 respondents from 2007 to 2019, the paper analyzes how ethnic identity, age, occupation, and economic concerns shape attitudes toward unification, and finds that economic factors have increasingly displaced traditional ethnic justifications.",
+    "tags": ["unification", "public opinion", "inter-korean", "통일의식", "국민정체성"]
+  },
+  {
+    "title": "Corporate Investment and Stock Returns Under North Korea Threats",
+    "year": 2026,
+    "meta": "Working paper",
+    "description": "Studies how geopolitical risk from North Korea affects South Korean firms&rsquo; investment and stock returns. Constructs a novel monthly GPRNK index from news articles that spikes during nuclear tests or military confrontations and falls during summits. Heightened GPRNK reduces corporate investment and stock returns, with larger effects for capital-intensive and geopolitically exposed firms; firms with higher labor flexibility are less affected. Local-projection estimates indicate persistent investment declines.",
+    "tags": ["geopolitical", "GPRNK", "stock returns", "corporate investment", "real options", "지정학"]
   }
 ]

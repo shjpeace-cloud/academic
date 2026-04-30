@@ -1,0 +1,16 @@
+
+The Long-Term Effects of the 1990s North Korean Famine on Health and Labor Market Outcomes
+
+This project studies how early-life exposure to the 1990s North Korean famine affected the later-life health and labor market outcomes of North Korean defectors. Using South Korea’s National Health Insurance Service data, the study compares famine-exposed cohorts with other North Korean defector cohorts and matched South Korean residents. It uses adult height as a proxy for early-life nutrition and examines its relationship with disease prevalence, employment, occupational status, and income. The project aims to provide empirical evidence on the long-term consequences of nutritional deprivation and to inform policies related to North Korean defector support, public health, and future inter-Korean integration.
+
+Health Assimilation among North Korean Defectors in South Korea
+
+This project analyzes how the health status of North Korean defectors changes after resettlement in South Korea. Using National Health Insurance Service data from 2002 to 2024, it compares North Korean defectors with matched South Korean residents in terms of chronic diseases, mental health, biomarkers, and health behaviors. The study examines whether health gaps narrow or widen over time and how local socioeconomic conditions affect health trajectories. By combining administrative big data with panel-data methods, the project contributes to research on immigrant and refugee health and offers policy implications for long-term settlement support.
+
+The Causes of Anti-Unification Sentiment in South Korea
+
+This study examines why negative attitudes toward Korean unification have increased in South Korea, especially among younger generations. Using survey data from more than 15,000 respondents between 2007 and 2019, the paper analyzes how ethnic identity, age, occupation, and economic concerns shape attitudes toward unification. The results show that younger South Koreans are less influenced by mono-ethnic nationalism than older generations, while economic factors such as blue-collar employment and concerns about post-unification inequality have become more important. The findings suggest that rising economic competition and uncertainty have weakened traditional ethnic justifications for unification and contributed to growing skepticism toward a unified Korea.
+
+Corporate Investment and Stock Returns Under North Korea Threats
+
+We study how geopolitical risk from North Korea affects South Korean firms’ investment and stock returns. We construct a novel monthly GPRNK index from news articles, which spikes during nuclear tests or military confrontations and falls during summits. Heightened GPRNK reduces corporate investment and stock returns, with larger effects for capital-intensive, and geopolitically exposed firms. By contrast, firms with higher labor flexibility are less affected. Local projection estimates show that investment declines are persistent. These results highlight both real options and Oi–Hartman–Abel channels in the transmission of geopolitical risk.

@@ -41,10 +41,11 @@
     {
       id: 'unification',
       title: 'Unification & Economic Integration',
-      description: 'Inter-Korean geopolitical risk and its transmission to financial markets; historical and institutional perspectives on Korean economic integration.',
+      description: 'Inter-Korean geopolitical risk and its transmission to corporate investment, stock returns, and financial markets; the political economy of public attitudes toward unification; historical perspectives on Korean economic integration.',
       keywords: [
         'geopolitical', 'inter-korea', 'inter-korean', 'unification',
-        'integration', 'stock returns', 'public opinion',
+        'integration', 'stock returns', 'public opinion', 'corporate investment',
+        'gprnk', 'real options',
         'inter-korean economic cooperation', 'knowledge partnership',
         '남북', '통일', '경협', '지정학',
         '통일의식', '국민정체성', '반이민',
@@ -54,13 +55,14 @@
     {
       id: 'refugees',
       title: 'North Korean Refugees',
-      description: 'Labor-market assimilation, health status, and subjective well-being among North Korean defectors resettled in South Korea.',
+      description: 'Labor-market assimilation, health trajectories and chronic disease, early-life nutritional shocks, and subjective well-being among North Korean defectors resettled in South Korea.',
       keywords: [
         'defector', 'defectors', 'refugee', 'refugees', 'resettlement',
         'assimilation', 'mental health', 'health status', 'happiness',
         'financial behaviors', 'labor market participation', 'health-seeking',
+        'famine', 'early-life shock', 'early-life', 'labor market',
         '북한이탈주민', '탈북', '신용행태',
-        '정착', '사회적 지지'
+        '정착', '사회적 지지', '고난의 행군'
       ]
     }
   ];
