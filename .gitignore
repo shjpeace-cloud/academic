@@ -12,3 +12,6 @@ desktop.ini
 # Local server / build artefacts
 .cache/
 node_modules/
+
+# Claude Code local-only settings (per-machine permissions)
+.claude/settings.local.json
