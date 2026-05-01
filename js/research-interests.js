@@ -27,15 +27,17 @@
     {
       id: 'foreign-relations',
       title: 'Foreign Economic Relations: China & Russia',
-      description: 'North Korea’s trade with China (firm- and aggregate-level) and the economic implications of strengthened North Korea–Russia ties amid the Russia–Ukraine war.',
+      description: 'North Korea’s trade with China (firm- and aggregate-level), the economic implications of strengthened North Korea–Russia ties amid the Russia–Ukraine war, and the structural reconfiguration of the regional economy linking Russia’s Far East, Northeast China, and the northern Korean Peninsula under deepening North Korea–China–Russia cooperation.',
       keywords: [
         'china', 'russia', 'russia–ukraine', 'russia-ukraine',
         'sanctions', 'firm-level', 'processing trade', 'supply chain',
         'north korea-china', 'north korea–china', 'cooperation with russia',
-        '중국', '러시아', '중러북', '미중',
+        'trilateral', 'far east', 'northeast china', 'regional economy',
+        'logistics', 'energy cooperation', 'labor mobility',
+        '중국', '러시아', '중러북', '북중러', '미중',
         '단둥', '가공무역', '북중', '북·중',
         '북-중', '동북3성', '대중국 의존도',
-        '공급망'
+        '공급망', '극동', '북방경제'
       ]
     },
     {
