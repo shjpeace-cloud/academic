@@ -7,8 +7,10 @@
 
 set -u
 
-REPO="/c/Users/shjpe/GitHub/academic"
-cd "$REPO" 2>/dev/null || { echo '{"systemMessage":"auto-push: repo path not found, skipping."}'; exit 0; }
+# cd into repo root (one level up from .claude/). Works regardless of where
+# the hook is invoked from (per-project Claude session or the parent-folder
+# multi-project router at OneDrive/GitHub/.claude/auto-push-router.sh).
+cd "$(dirname "$0")/.." 2>/dev/null || { echo '{"systemMessage":"auto-push: repo path not found, skipping."}'; exit 0; }
 
 # No changes (tracked or untracked)? Exit silently.
 if [ -z "$(git status --porcelain)" ]; then
