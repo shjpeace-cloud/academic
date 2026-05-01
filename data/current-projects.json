@@ -1,37 +1,32 @@
 [
   {
-    "title": "Regional Economic Reconfiguration in Russia&rsquo;s Far East and the Northern Korean Peninsula: Structural Implications of Deepening North Korea&ndash;China&ndash;Russia Cooperation",
-    "year": 2026,
-    "meta": "Working paper",
-    "description": "Examines how deepening cooperation among North Korea, China, and Russia is reshaping the regional economy of Russia&rsquo;s Far East and the northern Korean Peninsula. Since the Russia&ndash;Ukraine war, Russia has turned more decisively toward East Asia while North Korea has strengthened its strategic and economic ties with Russia, with China remaining central to regional trade, logistics, and industrial networks. The project analyzes whether these developments are producing a new regional economic structure linking Russia&rsquo;s Far East, Northeast China, and North Korea, focusing on logistics routes, industrial linkages, energy cooperation, labor mobility, and the strategic role of North Korea, and assesses the structural implications of trilateral cooperation for the future of the northern Korean Peninsula and South Korea&rsquo;s northern economic strategy.",
+    "title": "Regional Economic Reconfiguration in Russia’s Far East and the Northern Korean Peninsula: Structural Implications of Deepening North Korea–China–Russia Cooperation",
+    "meta": "In preparation",
+    "description": "Examines how deepening cooperation among North Korea, China, and Russia is reshaping the regional economy of Russia’s Far East and the northern Korean Peninsula. Since the Russia–Ukraine war, Russia has turned more decisively toward East Asia while North Korea has strengthened its strategic and economic ties with Russia, with China remaining central to regional trade, logistics, and industrial networks. The project analyzes whether these developments are producing a new regional economic structure linking Russia’s Far East, Northeast China, and North Korea, focusing on logistics routes, industrial linkages, energy cooperation, labor mobility, and the strategic role of North Korea, and assesses the structural implications of trilateral cooperation for the future of the northern Korean Peninsula and South Korea’s northern economic strategy.",
     "tags": ["China", "Russia", "Russia–Ukraine", "trilateral", "regional economy", "Far East", "Northeast China", "logistics", "energy cooperation", "labor mobility", "북중러", "극동", "북방경제", "동북3성"]
   },
   {
     "title": "The Long-Term Effects of the 1990s North Korean Famine on Health and Labor Market Outcomes",
-    "year": 2026,
-    "meta": "Working paper",
-    "description": "Studies how early-life exposure to the 1990s North Korean famine affected the later-life health and labor-market outcomes of North Korean defectors. Using South Korea&rsquo;s National Health Insurance Service (NHIS) data, the project compares famine-exposed cohorts with other defector cohorts and matched South Korean residents, with adult height as a proxy for early-life nutrition, and estimates effects on disease prevalence, employment, occupational status, and income.",
+    "meta": "In preparation",
+    "description": "Studies how early-life exposure to the 1990s North Korean famine affected the later-life health and labor-market outcomes of North Korean defectors. Using South Korea’s National Health Insurance Service (NHIS) data, the project compares famine-exposed cohorts with other defector cohorts and matched South Korean residents, with adult height as a proxy for early-life nutrition, and estimates effects on disease prevalence, employment, occupational status, and income.",
     "tags": ["famine", "early-life shock", "defectors", "health status", "labor market", "북한이탈주민", "고난의 행군"]
   },
   {
     "title": "Health Assimilation among North Korean Defectors in South Korea",
-    "year": 2026,
-    "meta": "Working paper",
+    "meta": "In preparation",
     "description": "Analyzes how the health status of North Korean defectors changes after resettlement in South Korea, using NHIS administrative data from 2002 to 2024. Compares defectors with matched South Korean residents on chronic diseases, mental health, biomarkers, and health behaviors, and examines whether health gaps narrow or widen over time and across local socioeconomic conditions.",
     "tags": ["defectors", "health status", "assimilation", "mental health", "북한이탈주민", "정착"]
   },
   {
     "title": "The Causes of Anti-Unification Sentiment in South Korea",
-    "year": 2026,
-    "meta": "Working paper",
+    "meta": "In preparation",
     "description": "Examines why negative attitudes toward Korean unification have increased in South Korea, especially among younger generations. Using survey data on more than 15,000 respondents from 2007 to 2019, the paper analyzes how ethnic identity, age, occupation, and economic concerns shape attitudes toward unification, and finds that economic factors have increasingly displaced traditional ethnic justifications.",
     "tags": ["unification", "public opinion", "inter-korean", "통일의식", "국민정체성"]
   },
   {
     "title": "Corporate Investment and Stock Returns Under North Korea Threats",
-    "year": 2026,
-    "meta": "Working paper",
-    "description": "Studies how geopolitical risk from North Korea affects South Korean firms&rsquo; investment and stock returns. Constructs a novel monthly GPRNK index from news articles that spikes during nuclear tests or military confrontations and falls during summits. Heightened GPRNK reduces corporate investment and stock returns, with larger effects for capital-intensive and geopolitically exposed firms; firms with higher labor flexibility are less affected. Local-projection estimates indicate persistent investment declines.",
+    "meta": "In preparation",
+    "description": "Studies how geopolitical risk from North Korea affects South Korean firms’ investment and stock returns. Constructs a novel monthly GPRNK index from news articles that spikes during nuclear tests or military confrontations and falls during summits. Heightened GPRNK reduces corporate investment and stock returns, with larger effects for capital-intensive and geopolitically exposed firms; firms with higher labor flexibility are less affected. Local-projection estimates indicate persistent investment declines.",
     "tags": ["geopolitical", "GPRNK", "stock returns", "corporate investment", "real options", "지정학"]
   }
 ]

@@ -112,7 +112,7 @@
     const venueHtml = venue ? `, <em>${esc(venue)}</em>` : '';
     let yearStr = '';
     if (item._ongoing) {
-      yearStr = item.year ? String(item.year) : 'ongoing';
+      yearStr = '';
     } else if (item.note && /forthcoming/i.test(item.note)) {
       yearStr = item.year ? `${item.year}, forthcoming` : 'forthcoming';
     } else if (item.year) {
