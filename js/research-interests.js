@@ -90,14 +90,34 @@
     return it.type === 'commentary-kr' && it.journal === '동아시아연구원';
   }
 
+  // Card priority rule (per user 2026-05-06):
+  //   Tier 1 — recent publication (within last 3 months from today)
+  //   Tier 2 — ongoing project (only when no recent publication in this category)
+  //   Tier 3 — older publication (fallback)
+  // Within each tier: descending by year/month.
+  // Items missing `month` are treated as year-end (month 12) for recency check —
+  // so "Forthcoming" / no-month entries in the current year still classify as recent.
+  function recentCutoffMonths() {
+    const now = new Date();
+    return now.getFullYear() * 12 + (now.getMonth() + 1) - 3;
+  }
+  function pubMonths(item) {
+    const y = item.year || 0;
+    const m = item.month || 12;
+    return y * 12 + m;
+  }
+  function isRecentPub(item) {
+    return !item._ongoing && pubMonths(item) >= recentCutoffMonths();
+  }
+
   function pickLatest(items, cat) {
     const matched = items
       .map(it => ({ it, s: scoreItem(it, cat) }))
       .filter(x => x.s > 0 && !isEAIKoreanTranslation(x.it))
       .sort((a, b) => {
-        const ao = a.it._ongoing ? 1 : 0;
-        const bo = b.it._ongoing ? 1 : 0;
-        if (ao !== bo) return bo - ao;
+        const at = isRecentPub(a.it) ? 0 : (a.it._ongoing ? 1 : 2);
+        const bt = isRecentPub(b.it) ? 0 : (b.it._ongoing ? 1 : 2);
+        if (at !== bt) return at - bt;
         const ay = a.it.year || 0, by = b.it.year || 0;
         if (by !== ay) return by - ay;
         return (b.it.month || 0) - (a.it.month || 0);
