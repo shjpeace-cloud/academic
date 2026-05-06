@@ -169,8 +169,18 @@
     "title": "What has North Korea Gained Economically from the Russia–Ukraine War?",
     "note": "[Commentary]",
     "journal": "Global NK",
-    "url": "https://www.globalnk.org/publication/view.php?cd=COM000180&ctype=1&s_keyword=&start=0",
-    "kr_url": "https://eai.or.kr/new/ko/pub/view.asp?intSeq=23230&board=kor_issuebriefing&keyword_option=kor_workingpaper&keyword=kor_special&more=kor_multimedia"
+    "url": "https://www.globalnk.org/publication/view.php?cd=COM000180&ctype=1&s_keyword=&start=0"
+  },
+  {
+    "id": 54,
+    "type": "commentary-kr",
+    "year": 2025,
+    "month": 5,
+    "authors": "정승호",
+    "title": "북한이 러시아-우크라이나 전쟁으로부터 얻은 경제적 이익은 무엇일까?",
+    "note": "[논평]",
+    "journal": "동아시아연구원",
+    "url": "https://eai.or.kr/new/ko/pub/view.asp?intSeq=23230&board=kor_issuebriefing&keyword_option=kor_workingpaper&keyword=kor_special&more=kor_multimedia"
   },
   {
     "id": 38,
