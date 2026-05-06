@@ -42,7 +42,7 @@
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="journal-en">English Journals</button>
     <button class="filter-btn" data-filter="journal-kr">Korean Journals</button>
-    <button class="filter-btn" data-filter="commentary-en">Commentaries</button>
+    <button class="filter-btn" data-filter="commentary-en commentary-kr">Commentaries</button>
     <button class="filter-btn" data-filter="report-en report-kr">Policy Reports</button>
     <button class="filter-btn" data-filter="working-paper">Working Papers</button>
     <button class="filter-btn" data-filter="book">Books & Chapters</button>
@@ -60,6 +60,7 @@ const SECTION_LABELS = {
   'journal-en':    'Peer-reviewed Articles (English)',
   'journal-kr':    'Peer-reviewed Articles (Korean)',
   'commentary-en': 'Commentaries & Policy Briefs (English)',
+  'commentary-kr': 'Commentaries & Policy Briefs (Korean)',
   'report-en':     'Policy Reports (English)',
   'report-kr':     'Policy Reports (Korean)',
   'working-paper': 'Working Papers',
@@ -67,7 +68,7 @@ const SECTION_LABELS = {
 };
 
 const SECTION_ORDER = [
-  'journal-en', 'journal-kr', 'commentary-en',
+  'journal-en', 'journal-kr', 'commentary-en', 'commentary-kr',
   'report-en', 'report-kr', 'working-paper', 'book'
 ];
 
