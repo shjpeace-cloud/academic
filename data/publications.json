@@ -31,8 +31,18 @@
     "title": "Assessment of North Korea's 9th Party Congress Economic Plan: Background to the Adopting a Management-Oriented Plan Despite the Declaration of Success in the 8th-Term",
     "note": "[Commentary]",
     "journal": "Global NK",
-    "url": "https://www.globalnk.org/publication/view.php?cd=COM000226&ctype=1&s_keyword=&start=0",
-    "kr_url": "https://www.eai.or.kr/press/press_01_view.php?no=13539"
+    "url": "https://www.globalnk.org/publication/view.php?cd=COM000226&ctype=1&s_keyword=&start=0"
+  },
+  {
+    "id": 50,
+    "type": "commentary-kr",
+    "year": 2026,
+    "month": 4,
+    "authors": "정승호",
+    "title": "북한 제9차 당대회 경제계획 평가: 8기 성공 선언에도 관리형 계획을 채택한 배경",
+    "note": "[논평]",
+    "journal": "동아시아연구원",
+    "url": "https://www.eai.or.kr/press/press_01_view.php?no=13539"
   },
   {
     "id": 46,
@@ -55,8 +65,18 @@
     "title": "The Economic Limits of the 'Regional Development 20×10 Policy'",
     "note": "[Commentary]",
     "journal": "Global NK",
-    "url": "https://www.globalnk.org/publication/view.php?cd=COM000219&ctype=1&s_keyword=&start=0",
-    "kr_url": "https://www.eai.or.kr/press/press_01_view.php?no=13498"
+    "url": "https://www.globalnk.org/publication/view.php?cd=COM000219&ctype=1&s_keyword=&start=0"
+  },
+  {
+    "id": 51,
+    "type": "commentary-kr",
+    "year": 2026,
+    "month": 2,
+    "authors": "정승호",
+    "title": "'지방발전 20×10정책'의 경제적 한계",
+    "note": "[논평]",
+    "journal": "동아시아연구원",
+    "url": "https://www.eai.or.kr/press/press_01_view.php?no=13498"
   },
   {
     "id": 44,
@@ -67,8 +87,18 @@
     "title": "Policy Adjustment of North Korea's 'Five-Year Plan for Economic Development': An Analysis Based on Plenary Meetings of the Worker's Party Central Committee",
     "journal": "Global NK",
     "note": "Special Report: Assessment of North Korea's Five-Year Economic Plan",
-    "url": "https://www.globalnk.org/publication/view.php?cd=REP000095&ctype=2&s_keyword=&start=0",
-    "kr_url": "https://www.eai.or.kr/press/press_01_view.php?no=13458"
+    "url": "https://www.globalnk.org/publication/view.php?cd=REP000095&ctype=2&s_keyword=&start=0"
+  },
+  {
+    "id": 53,
+    "type": "report-kr",
+    "year": 2025,
+    "month": 12,
+    "authors": "정승호",
+    "title": "북한 노동당 중앙위원회 전원회의를 통해 본 '경제발전 5개년계획'의 정책 조정과정",
+    "note": "[Special Report]",
+    "journal": "동아시아연구원",
+    "url": "https://www.eai.or.kr/press/press_01_view.php?no=13458"
   },
   {
     "id": 43,
@@ -92,8 +122,18 @@
     "title": "Does North Korea's Recent Positive Growth Signal a Recovery in People's Livelihoods?",
     "note": "[Commentary]",
     "journal": "Global NK",
-    "url": "https://www.globalnk.org/publication/view.php?cd=COM000199&ctype=1&s_keyword=&start=0",
-    "kr_url": "https://www.eai.or.kr/press/press_01_view.php?no=13398"
+    "url": "https://www.globalnk.org/publication/view.php?cd=COM000199&ctype=1&s_keyword=&start=0"
+  },
+  {
+    "id": 52,
+    "type": "commentary-kr",
+    "year": 2025,
+    "month": 9,
+    "authors": "정승호",
+    "title": "최근 북한경제의 플러스 성장 지속은 북한주민의 민생회복을 의미하는가?",
+    "note": "[논평]",
+    "journal": "동아시아연구원",
+    "url": "https://www.eai.or.kr/press/press_01_view.php?no=13398"
   },
   {
     "id": 41,
