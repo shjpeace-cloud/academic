@@ -114,7 +114,6 @@ function formatPub(p) {
   if (p.pages) line += `, ${p.pages}`;
   if (p.year_label) line += ` ${p.year_label}`;
   if (p.publisher) line += `, ${p.publisher}`;
-  if (p.note && p.type !== 'journal-en') line += ` ${p.note}`;
 
   // DOI
   if (p.doi) line += `. DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>`;
