@@ -82,10 +82,18 @@
     return s;
   }
 
+  // EAI publishes Global NK 논평 in both English (commentary-en) and Korean
+  // (commentary-kr, journal "동아시아연구원"). Counting both would double-surface
+  // the same piece. Only the English version is scored. Standalone Korean
+  // commentaries (e.g., 인천대 중국학술원 관행중국) are preserved.
+  function isEAIKoreanTranslation(it) {
+    return it.type === 'commentary-kr' && it.journal === '동아시아연구원';
+  }
+
   function pickLatest(items, cat) {
     const matched = items
       .map(it => ({ it, s: scoreItem(it, cat) }))
-      .filter(x => x.s > 0)
+      .filter(x => x.s > 0 && !isEAIKoreanTranslation(x.it))
       .sort((a, b) => {
         const ao = a.it._ongoing ? 1 : 0;
         const bo = b.it._ongoing ? 1 : 0;
