@@ -30,3 +30,12 @@ node_modules/
 # Working papers / manuscripts dropped here for Claude to read.
 # Unpublished drafts must never reach this public repo.
 .claude/papers/
+
+# Root-level manuscripts / scratch files — never publish from this repo.
+# (Site PDFs live in data/, which stays tracked.)
+/*.pdf
+/*.docx
+/*.doc
+/*.hwp
+/*.hwpx
+/scratch_*.txt
