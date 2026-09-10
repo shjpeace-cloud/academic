@@ -26,3 +26,7 @@ node_modules/
 # Time-stats integration: place timesheet JSON backups here for local-only
 # integrated analysis (scenario A). Not pushed to public repo.
 .timesheet-stats/
+
+# Working papers / manuscripts dropped here for Claude to read.
+# Unpublished drafts must never reach this public repo.
+.claude/papers/
