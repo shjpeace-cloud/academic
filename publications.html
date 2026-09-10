@@ -94,7 +94,7 @@ function formatPub(p) {
     const chTitle = p.url
       ? `<a href="${p.url}" target="_blank">${p.title}</a>`
       : p.title;
-    let bookLine = `${p.authors}. ${yearStr} ${chTitle}.`;
+    let bookLine = `${p.authors}.${p.corresponding ? ' <span class="pub-corr">Corresponding author</span>' : ''} ${yearStr} ${chTitle}.`;
     if (p.editor) bookLine += ` ${p.editor},`;
     if (p.book) bookLine += ` <em>${p.book}</em>.`;
     if (p.publisher) bookLine += ` ${p.publisher}.`;
@@ -102,7 +102,10 @@ function formatPub(p) {
     return bookLine;
   }
 
-  let line = `${p.authors}. ${yearStr} ${titleStr}`;
+  const corrTag = p.corresponding
+    ? ` <span class="pub-corr">Corresponding author</span>`
+    : '';
+  let line = `${p.authors}.${corrTag} ${yearStr} ${titleStr}`;
   if (p.note) line += ` ${p.note}`;
   line += `.`;
 

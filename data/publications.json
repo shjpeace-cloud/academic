@@ -45,7 +45,8 @@
     "issue": "3",
     "pages": "583–610",
     "doi": "10.1353/apr.2026.a999038",
-    "url": "https://doi.org/10.1353/apr.2026.a999038"
+    "url": "https://doi.org/10.1353/apr.2026.a999038",
+    "corresponding": true
   },
   {
     "id": 47,
@@ -171,7 +172,8 @@
     "issue": "8",
     "pages": "134",
     "doi": "10.3390/covid5080134",
-    "url": "https://doi.org/10.3390/covid5080134"
+    "url": "https://doi.org/10.3390/covid5080134",
+    "corresponding": true
   },
   {
     "id": 40,
