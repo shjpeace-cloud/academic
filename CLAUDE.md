@@ -27,6 +27,27 @@
 
 ---
 
+## 📌 세션 시작 시 읽을 파일 (Claude 책임 — 사용자가 지시하지 않아도)
+
+사용자가 어떤 문서를 읽으라고 말할 필요가 없도록, 아래를 **먼저 확인**한다.
+모두 gitignore 대상이라 공개 저장소에 없다. 없으면 그냥 넘어간다.
+
+| 순서 | 파일 | 언제 |
+|---|---|---|
+| 1 | `.claude/career/baseline-*.md` 중 **가장 최근 것** | 커리어·시간통계·진단·전략 관련 질문이면 항상 |
+| 2 | `.claude/papers/*/notes.md` | 논문·투고·저널·원고 관련 질문이면 해당 폴더 |
+| 3 | `.claude/worklog/` 최근 1–2개 | "어제 뭐 했지?" 류 |
+| 4 | `.claude/career/evaluation.md` | 통합 진단 실행 시 (framework 필수 reference) |
+
+**`.claude/papers/<주제>/notes.md`** 는 논문별 작업 노트다. 각 노트는 자기완결적으로 쓰여 있어
+(현황·목표 저널·예상 심사 반론·다음 할 일) 그 파일 하나만 읽으면 이어서 작업할 수 있다.
+새 논문 작업을 시작하면 같은 형식으로 폴더와 노트를 만든다.
+
+작업이 끝나면 **해당 notes.md를 갱신**한다 — 결정사항, 새로 확인된 사실, 다음 단계.
+worklog와 별개다: worklog는 날짜별 기록, notes.md는 그 논문의 현재 상태.
+
+---
+
 ## 파일 구조
 
 ```
@@ -57,7 +78,9 @@ academic/
     ├── settings.local.json  ← 개인 권한 (gitignored)
     ├── auto-push.sh         ← auto-commit/push 스크립트
     ├── worklog/             ← 작업 일지 (gitignored, OneDrive 동기화로만 보존)
-    └── career/              ← 경력 컨설팅 자료 (gitignored, 비공개)
+    ├── papers/              ← 논문별 작업 노트 + 원고 (gitignored, 비공개)
+    │   └── <주제>/notes.md      현황·목표 저널·예상 반론·다음 할 일
+    └── career/              ← 경력 컨설팅 자료 + 진단 baseline (gitignored, 비공개)
 
 .timesheet-stats/            ← timesheet 자동 백업 cache (gitignored, 통합 진단용)
 ```
