@@ -74,6 +74,21 @@ const SECTION_ORDER = [
   'report-en', 'report-kr', 'working-paper', 'book', 'book-review'
 ];
 
+// Own-name forms across the corpus, longest/most specific first.
+const SELF_NAMES = ['Jung, Seungho', 'Jung, Seung-Ho', 'Seungho Jung', 'Seung-Ho Jung', '정승호'];
+
+// Corresponding-author convention: asterisk on the name, note at the end.
+function markCorr(p) {
+  if (!p.corresponding) return p.authors;
+  for (const n of SELF_NAMES) {
+    const i = p.authors.indexOf(n);
+    if (i !== -1) {
+      return p.authors.slice(0, i + n.length) + '*' + p.authors.slice(i + n.length);
+    }
+  }
+  return p.authors;
+}
+
 function formatPub(p) {
   const parts = [];
 
@@ -94,18 +109,16 @@ function formatPub(p) {
     const chTitle = p.url
       ? `<a href="${p.url}" target="_blank">${p.title}</a>`
       : p.title;
-    let bookLine = `${p.authors}.${p.corresponding ? ' <span class="pub-corr">Corresponding author</span>' : ''} ${yearStr} ${chTitle}.`;
+    let bookLine = `${markCorr(p)}. ${yearStr} ${chTitle}.`;
     if (p.editor) bookLine += ` ${p.editor},`;
     if (p.book) bookLine += ` <em>${p.book}</em>.`;
     if (p.publisher) bookLine += ` ${p.publisher}.`;
     if (p.note) bookLine += ` (${p.note})`;
+    if (p.corresponding) bookLine += ` <span class="pub-corr">*Corresponding author</span>`;
     return bookLine;
   }
 
-  const corrTag = p.corresponding
-    ? ` <span class="pub-corr">Corresponding author</span>`
-    : '';
-  let line = `${p.authors}.${corrTag} ${yearStr} ${titleStr}`;
+  let line = `${markCorr(p)}. ${yearStr} ${titleStr}`;
   if (p.note) line += ` ${p.note}`;
   line += `.`;
 
@@ -124,6 +137,7 @@ function formatPub(p) {
   if (p.doi) line += `. DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>`;
 
   line += `.`;
+  if (p.corresponding) line += ` <span class="pub-corr">*Corresponding author</span>`;
   return line;
 }
 

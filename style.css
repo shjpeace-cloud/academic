@@ -481,17 +481,9 @@ footer {
   .cv-item { grid-template-columns: 70px 1fr; gap: 0.55rem; }
 }
 
-/* Corresponding-author badge on publication entries */
+/* Corresponding-author note on publication entries — deliberately quiet */
 .pub-corr {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--accent, #8a6d3b);
-  border: 1px solid currentColor;
-  border-radius: 3px;
-  padding: 0.05em 0.4em;
-  vertical-align: 0.08em;
+  font-size: 0.8em;
+  color: var(--text-muted);
   white-space: nowrap;
 }
