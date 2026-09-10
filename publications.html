@@ -152,7 +152,7 @@ function renderSection(pubs, type, activeFilter) {
 }
 
 async function init() {
-  const res = await fetch('data/publications.json');
+  const res = await fetch('data/publications.json', { cache: 'no-cache' });
   const pubs = await res.json();
 
   const filters = document.querySelectorAll('.filter-btn');

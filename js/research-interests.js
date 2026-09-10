@@ -153,7 +153,7 @@
 
   async function getJson(path) {
     try {
-      const r = await fetch(path);
+      const r = await fetch(path, { cache: 'no-cache' });
       if (!r.ok) return null;
       return await r.json();
     } catch (e) {
