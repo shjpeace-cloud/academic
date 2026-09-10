@@ -46,6 +46,7 @@
     <button class="filter-btn" data-filter="report-en report-kr">Policy Reports</button>
     <button class="filter-btn" data-filter="working-paper">Working Papers</button>
     <button class="filter-btn" data-filter="book">Books & Chapters</button>
+    <button class="filter-btn" data-filter="book-review">Book Reviews</button>
   </div>
 
   <div id="pub-list"></div>
@@ -64,12 +65,13 @@ const SECTION_LABELS = {
   'report-en':     'Policy Reports (English)',
   'report-kr':     'Policy Reports (Korean)',
   'working-paper': 'Working Papers',
-  'book':          'Books & Book Chapters'
+  'book':          'Books & Book Chapters',
+  'book-review':   'Book Reviews'
 };
 
 const SECTION_ORDER = [
   'journal-en', 'journal-kr', 'commentary-en', 'commentary-kr',
-  'report-en', 'report-kr', 'working-paper', 'book'
+  'report-en', 'report-kr', 'working-paper', 'book', 'book-review'
 ];
 
 function formatPub(p) {
