@@ -1,5 +1,16 @@
 [
   {
+    "id": 56,
+    "type": "journal-en",
+    "year": 2026,
+    "authors": "Lee, Seohyun, Jongmin Lee, and Seungho Jung",
+    "title": "Corporate Investment Under North Korea Threats",
+    "journal": "Applied Economics Letters",
+    "note": "Forthcoming",
+    "extra_url": "https://doi.org/10.2139/ssrn.5946319",
+    "extra_label": "SSRN working paper"
+  },
+  {
     "id": 55,
     "type": "journal-kr",
     "year": 2026,
