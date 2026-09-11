@@ -1,7 +1,24 @@
-# GPRNK data-release workspace (HOLD)
+# GPRNK data-release workspace (HOLD → bundled overhaul)
 
 **Status**: on hold pending discussion with co-authors (Seohyun Lee, Jongmin Lee).
 Do NOT publish anything from this folder to the live site until green-lit.
+
+**Trigger for next action**: co-author approval of hosting + license + citation.
+
+**Once triggered, execute as a single bundled overhaul** (user decision 2026-09-12):
+
+1. **Add photo.jpg** — currently missing (onerror hides), long-standing known issue
+2. **Home page refactor**
+   - Remove Research Interests 4-card grid (duplicate of Research page)
+   - Add short bio paragraph (SEO-friendly, all 4 research pillars mentioned)
+   - Add featured Figure 1-style GPRNK chart with caption → link to `data/gprnk.html`
+   - Recent News stays
+3. **Research page** — retains sole ownership of the 4-card grid (its raison d'être)
+4. **GPRNK data page** — `data/gprnk.html` + `data/gprnk-monthly.csv` (this workspace's CSV, licensed CC BY 4.0, cite Lee-Lee-Jung 2026 AEL); navbar gets "Data" entry
+5. **Chart generation** — Python/matplotlib PNG from `gprnk-monthly.csv`, styled after paper Figure 1 (event annotations for nuclear tests, ICBMs, summits, hostile-two-state)
+6. **Recent News** — add "GPRNK index dataset now available (1995–2025)" item at top
+7. **sitemap.xml + navbar** — new URL entry
+8. All in a single coordinated commit series so the design lands as one visible change
 
 ## Files here
 
