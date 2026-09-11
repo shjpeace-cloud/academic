@@ -360,7 +360,8 @@
     "volume": "14",
     "issue": "1",
     "pages": "7–38",
-    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002922953"
+    "doi": "10.35369/jpus.14.2.202212.7",
+    "url": "https://doi.org/10.35369/jpus.14.2.202212.7"
   },
   {
     "id": 25,
@@ -397,7 +398,8 @@
     "volume": "12",
     "issue": "1",
     "pages": "79–99",
-    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002814676"
+    "doi": "10.31780/jpu.2022.12.1.79",
+    "url": "https://doi.org/10.31780/jpu.2022.12.1.79"
   },
   {
     "id": 22,
@@ -459,7 +461,8 @@
     "volume": "13",
     "issue": "1",
     "pages": "293–335",
-    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002739035"
+    "doi": "10.35369/jpus.13.1.202106.293",
+    "url": "https://doi.org/10.35369/jpus.13.1.202106.293"
   },
   {
     "id": 17,
@@ -563,7 +566,8 @@
     "volume": "29",
     "issue": "4",
     "pages": "481–503",
-    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002168096"
+    "doi": "10.22904/sje.2016.29.4.003",
+    "url": "https://doi.org/10.22904/sje.2016.29.4.003"
   },
   {
     "id": 8,
@@ -575,7 +579,8 @@
     "volume": "23",
     "issue": "2",
     "pages": "1–37",
-    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002175626"
+    "doi": "10.23014/kace.23.2.201612.1",
+    "url": "https://doi.org/10.23014/kace.23.2.201612.1"
   },
   {
     "id": 7,
