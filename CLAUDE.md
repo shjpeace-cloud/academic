@@ -52,13 +52,14 @@ worklog와 별개다: worklog는 날짜별 기록, notes.md는 그 논문의 현
 
 ```
 academic/
-├── index.html              ← Home (hero, research interests 4-card grid, Recent News)
+├── index.html              ← Home (hero, About 문단, Featured GPRNK 그림, Recent News)
 ├── research.html           ← Research (4-card grid + Current Projects 자동 렌더)
 ├── publications.html       ← Publications (JSON 기반 자동 렌더 + 8개 type 필터)
+├── gprnk.html              ← Data (GPRNK 지수 공개 페이지 — 차트·다운로드·인용)
 ├── teaching.html           ← Teaching (강의 소개)
 ├── cv.html                 ← CV (학력, 경력, Selected Publications)
 ├── style.css               ← 공통 스타일 (fluid responsive, 3단 브레이크포인트)
-├── sitemap.xml             ← 5 URL, priorities
+├── sitemap.xml             ← 6 URL, priorities
 ├── robots.txt              ← 전체 허용 + sitemap 안내
 ├── google1f7b21bb5170b5de.html  ← Google Search Console verification
 ├── photo.jpg               ← 프로필 사진 (직접 추가 — onerror로 missing OK)
@@ -68,13 +69,16 @@ academic/
 ├── data/
 │   ├── publications.json   ← 논문 데이터 (모든 발표 SOT — 여기만 수정하면 자동 업데이트)
 │   ├── current-projects.json  ← 진행 중 프로젝트 (research.html이 fetch)
-│   └── CV_Seung-Ho_JUNG(20251010).pdf
+│   ├── CV_Seung-Ho_JUNG(20251010).pdf
+│   └── gprnk/              ← GPRNK 공개 데이터 (CSV·XLSX·PNG, 빌드 산출물)
 │
 ├── js/
-│   └── research-interests.js  ← 4-card 자동 갱신 + Current Projects 렌더 + 3-tier 우선순위
+│   ├── research-interests.js  ← 4-card 자동 갱신 + Current Projects 렌더 + 3-tier 우선순위
+│   └── gprnk-chart.js      ← gprnk.html 인터랙티브 차트 (의존성 없음)
 │
 └── .claude/
     ├── settings.json        ← Stop hook (auto-push) — repo에 commit
+    ├── gprnk-workspace/     ← GPRNK 릴리스 워크스페이스 (README + build_gprnk.py)
     ├── settings.local.json  ← 개인 권한 (gitignored)
     ├── auto-push.sh         ← auto-commit/push 스크립트
     ├── worklog/             ← 작업 일지 (gitignored, OneDrive 동기화로만 보존)
@@ -98,7 +102,8 @@ academic/
 - `<head>`: 한/영 통합 title, meta description, keywords, canonical, Open Graph, Twitter Card
 - JSON-LD `Person` schema (`alternateName`, `worksFor`, `address`, `sameAs`=Google Scholar, `knowsAbout`)
 - Hero: photo + 이름(영/한) + 직위 + 한국어 소속 라인 (`인천대학교 동북아국제통상물류학부 부교수`, Korean SEO 매칭) + Office/주소/Tel/이메일 2개(`shjung@inu.ac.kr`, `shjpeace@gmail.com`) + 3 hero links (Google Scholar / CV / Email)
-- **Research Interests** 섹션: `<div id="research-grid">` — `js/research-interests.js`가 4-card 자동 갱신
+- **About**: 영문 2문단(4개 연구축 + 측정 문제) + 한국어 1문장. 2026-09-16 개편에서 4-card 그리드를 여기서 제거 — 그리드는 Research 페이지 전용 (중복 해소). 그래서 이 페이지는 `research-interests.js`를 로드하지 않는다
+- **Featured: the GPRNK Index**: `data/gprnk/gprnk-index.png` + 캡션 → `gprnk.html` 링크
 - **Recent News**: 최근 ~9개 항목 수동 관리. 새 publication/commentary 추가 시 최상단에 `<div class="news-item">` 추가, 가장 오래된 것 제거 (사용자 판단)
 
 ### `research.html`
@@ -112,6 +117,23 @@ academic/
 - `data/publications.json` fetch → `SECTION_LABELS` + `SECTION_ORDER` 기준 섹션 렌더
 - `formatPub(p)`: type별 분기 (book은 별도 분기). authors, year(.month), title(linked), journal(italic), volume(issue), pages, year_label, publisher, DOI 순
 - `buildLinks(p)`: `kr_url` (EAI 한글 버전 — 현재는 분리된 Korean entry 쓰므로 거의 비어있음), `extra_url`
+
+### `gprnk.html` (Data) ⭐ 2026-09-16 신설
+
+GPRNK 지수(Lee·Lee·Jung 2026, *Applied Economics Letters*) 공개 페이지. policyuncertainty.com 류의
+데이터 릴리스 페이지 역할.
+
+- **데이터**: `data/gprnk/GPRNK_monthly.csv` / `.xlsx` / `gprnk-index.png` — 전부 **빌드 산출물**.
+  손으로 고치지 말고 `.claude/gprnk-workspace/build_gprnk.py`를 다시 돌린다
+- **공개 열 9개**: `date, gprnk, gprnk_negative, gprnk_positive, threat, sanction, talks,
+  economic_cooperation, gprnk_raw`
+- **마스터는 공개 안 함**: `.claude/GPRNK(YYYYMM).xlsx`(186열)에는 Caldara–Iacoviello 국가별 GPR,
+  EPU/GEPU, KOSPI/KOSDAQ/Dow, VKOSPI, 환율 등 **제3자 계열**이 섞여 있어 재배포 권한이 없다.
+  `.gitignore: .claude/*.xlsx`로 차단
+- **차트** `js/gprnk-chart.js`: 3뷰 — 헤드라인(이벤트 마커) / 음·양 성분 / 4개 세부지수(small
+  multiples). hover·화살표 키·표 보기 세 경로로 값 접근 가능. 좁은 폭에서는 이벤트 라벨 숨김 +
+  세부지수 1열
+- **인용·라이선스**: 논문 인용(APA + BibTeX) + CC BY 4.0. Dataset JSON-LD 포함 (Google Dataset Search)
 
 ### `teaching.html` / `cv.html`
 - `cv.html`: 학력(B.Agr. Korea Univ. 2001 / MPP KDI School 2003 / Ph.D. SNU 2014), 경력(BoK Economist 2014–2019, KIEP Researcher 2005–2007 등), Selected Publications(5건 + DOI 링크), `data/CV_Seung-Ho_JUNG(20251010).pdf` 다운로드 (URL-encoded `%28%29`)
@@ -267,6 +289,15 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 - `<a class="cv-download" href="data/CV_Seung-Ho_JUNG%28YYYYMMDD%29.pdf">` (URL-encoded 괄호)
 - `Last updated: ...` 라인
 
+### 5-b. GPRNK 지수 월간 갱신 시
+
+1. 공저자가 보낸 새 마스터를 `.claude/GPRNK(YYYYMM).xlsx`로 저장 (gitignored)
+2. `python .claude/gprnk-workspace/build_gprnk.py` — 가장 최근 마스터를 자동 선택해 CSV·XLSX·PNG 재생성
+3. `gprnk.html`의 **Updates 표에 행 추가** (릴리스 월 / 커버리지 / 비고)
+4. 커버리지 문구가 자동(`#coverage-line`)이라 본문 수정 불필요. `temporalCoverage`(JSON-LD)와
+   meta description의 연도는 수동 확인
+5. 커밋 + push
+
 ### 6. `formatPub` 알려진 동작
 
 - `note` 필드는 `[Commentary]` / `[웹진]` / `[논평]` 같은 라벨용. 2026-05-06에 두 번 출력되던 pre-existing bug 수정 완료(`a490611`).
@@ -355,6 +386,7 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 | 04-30 (오전) | 첫 통합 진단 baseline 작성 (`.claude/career/baseline-2026-04-30.md`) |
 | 05-01 | 부모 폴더 멀티프로젝트 셋업 (academic + timesheet 단일 터미널), auto-push.sh 절대경로 버그 픽스, timesheet 자동 백업 → `.timesheet-stats/` Apps Script endpoint + Task Scheduler 04:00 (이후 09:00로 이동) |
 | 05-05 | Current Projects impact-based 재정렬 + GPRNK SSRN DOI 링크, **편집 직후 즉시 push 정책 변경**, evaluation.txt+evaluation.md 단일 .md 통합, auto-backup 5/2 이후 누락 진단 |
+| 09-16 | **GPRNK 데이터 공개 + 홈페이지 개편 (bundled overhaul 실행)** — `data/gprnk/`(CSV·XLSX·PNG 빌드 산출물), `gprnk.html` Data 페이지 + `js/gprnk-chart.js`, `build_gprnk.py`, navbar `Data` 6페이지, Home의 4-card 그리드 제거 → About + Featured 그림, sitemap 6 URL. 마스터 xlsx는 제3자 계열 때문에 비공개 유지(`.gitignore: .claude/*.xlsx`). 커밋 `bb3099f` |
 | 05-06 | **Stale clone 발견 + 폐기** (working dir 정정), Backup scheduler 정상화 (04:00→09:00, junction 셋업, Operational log 활성화), 관행중국 commentary id 49 추가, EAI 한·영 페어 분리 (id 50/51/52/53/54) + research-interests 한글 페어 제외 filter, **3-tier 우선순위 룰** (recent pub > ongoing > older pub), formatPub note 중복 출력 bug 수정 |
 
 ---

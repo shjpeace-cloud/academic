@@ -11,17 +11,35 @@ Personal academic website for Seungho Jung (정승호), Associate Professor at I
 
 ```
 academic-site/
-├── index.html          ← Home (연구 소개, 최근 소식)
+├── index.html          ← Home (소개, GPRNK 그림, 최근 소식)
 ├── research.html       ← Research (연구 분야, 진행 중 프로젝트)
 ├── publications.html   ← Publications (JSON에서 자동 렌더링)
+├── gprnk.html          ← Data (GPRNK 지수 공개·다운로드)
 ├── teaching.html       ← Teaching (강의 소개)
 ├── cv.html             ← CV (학력, 경력, 연락처)
 ├── style.css           ← 공통 스타일시트
 ├── photo.jpg           ← 프로필 사진 (직접 추가 필요)
 ├── CV_Seung-Ho_JUNG.pdf ← CV PDF 파일 (직접 추가 필요)
 └── data/
-    └── publications.json  ← 논문 데이터 (여기만 수정하면 Publications 자동 업데이트)
+    ├── publications.json  ← 논문 데이터 (여기만 수정하면 Publications 자동 업데이트)
+    └── gprnk/             ← GPRNK 공개 데이터 (CSV·엑셀·그림) — 스크립트가 만드는 파일
 ```
+
+---
+
+## GPRNK 지수 업데이트 방법
+
+공저자에게 새 마스터 엑셀을 받으면:
+
+1. `.claude/GPRNK(YYYYMM).xlsx` 이름으로 저장 (이 파일 자체는 공개되지 않음)
+2. 터미널에서 `python .claude/gprnk-workspace/build_gprnk.py` 실행
+   → `data/gprnk/`의 CSV·엑셀·그림이 새로 만들어짐
+3. `gprnk.html`의 **Updates** 표에 한 줄 추가 (릴리스 월 / 기간 / 비고)
+4. 커밋 + 푸시
+
+`data/gprnk/` 안의 파일은 **직접 고치지 말 것** — 스크립트가 덮어쓴다.
+공개되는 열은 9개(지수·음/양 성분·4개 세부지수·raw)뿐이고, 마스터에 섞여 있는
+외부 기관 데이터(GPR 국가지수, EPU, KOSPI/VKOSPI, 환율 등)는 올리지 않는다.
 
 ---
 

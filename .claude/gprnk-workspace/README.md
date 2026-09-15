@@ -1,11 +1,22 @@
-# GPRNK data-release workspace (HOLD → bundled overhaul)
+# GPRNK data-release workspace (RELEASED 2026-09-16)
 
-**Status**: on hold pending discussion with co-authors (Seohyun Lee, Jongmin Lee).
-Do NOT publish anything from this folder to the live site until green-lit.
+**Status**: released. Co-authors (Seohyun Lee, Jongmin Lee) approved, and the bundled
+overhaul below shipped in commit `bb3099f` — except item 1 (photo.jpg), which is still
+missing from the repo.
 
-**Trigger for next action**: co-author approval of hosting + license + citation.
+**Live**: https://shjpeace-cloud.github.io/academic/gprnk.html
 
-**Once triggered, execute as a single bundled overhaul** (user decision 2026-09-12):
+**Build**: `python .claude/gprnk-workspace/build_gprnk.py` regenerates
+`data/gprnk/{GPRNK_monthly.csv, GPRNK_monthly.xlsx, gprnk-index.png}` from the newest
+`.claude/GPRNK(YYYYMM).xlsx`. Those three files are build output — never hand-edit them.
+`gprnk-monthly.csv` in this folder is the original 9-column draft, superseded by the
+generated CSV.
+
+**Open**: whether to `git rm --cached .claude/GPRNK(202510).xlsx` — the 186-column master
+is still tracked in the public repo from an earlier session (the note below saying it is
+gitignored was wrong). New masters are now blocked by `.gitignore: .claude/*.xlsx`.
+
+**What shipped** (plan of 2026-09-12):
 
 1. **Add photo.jpg** — currently missing (onerror hides), long-standing known issue
 2. **Home page refactor**
