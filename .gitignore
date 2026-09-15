@@ -27,6 +27,12 @@ node_modules/
 # integrated analysis (scenario A). Not pushed to public repo.
 .timesheet-stats/
 
+# Co-authors' GPRNK master workbooks. The public release is built from these
+# into data/gprnk/ by .claude/gprnk-workspace/build_gprnk.py; the master itself
+# carries third-party series (GPR country indices, EPU, KOSPI/VKOSPI, FX) that
+# are not ours to redistribute.
+.claude/*.xlsx
+
 # Working papers / manuscripts dropped here for Claude to read.
 # Unpublished drafts must never reach this public repo.
 .claude/papers/
