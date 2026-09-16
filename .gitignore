@@ -12,6 +12,8 @@ desktop.ini
 # Local server / build artefacts
 .cache/
 node_modules/
+__pycache__/
+*.pyc
 
 # Claude Code local-only settings (per-machine permissions)
 .claude/settings.local.json
@@ -32,6 +34,14 @@ node_modules/
 # carries third-party series (GPR country indices, EPU, KOSPI/VKOSPI, FX) that
 # are not ours to redistribute.
 .claude/*.xlsx
+
+# Intermediates of the GPRNK reconstruction (rebuild_gprnk.py). counts.csv is
+# raw BigKinds output under their API terms; the rest is derived from it and
+# regenerable. Publish base_params.json deliberately, if at all, once a rebuild
+# has been validated.
+.claude/gprnk-workspace/counts.csv
+.claude/gprnk-workspace/rebuilt.csv
+.claude/gprnk-workspace/base_params.json
 
 # Working papers / manuscripts dropped here for Claude to read.
 # Unpublished drafts must never reach this public repo.
