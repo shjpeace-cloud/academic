@@ -57,14 +57,16 @@
   </script>
 
   <style>
-    /* Below ~680px the value labels would scale under 9px, so the figure
-       scrolls sideways rather than shrinking past legibility. */
-    .mkt-chart { width: 100%; min-width: 680px; height: auto; display: block; }
+    /* The figure reuses .figure-card, so this chart sizes exactly like the
+       thumbnails on Home and Data. Only below ~700px does it stop shrinking
+       and scroll sideways instead, to keep the labels above 9px. */
+    .mkt-chart { width: 100%; height: auto; display: block; }
     .mkt-bar circle { transition: r .12s ease; }
     .mkt-bar:hover circle { r: 6.5; }
-    .mkt-figure { background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.9rem 0.6rem 0.4rem; margin: 1rem 0 0.4rem;
-      overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    @media (max-width: 700px) {
+      .mkt-figure { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .mkt-chart { min-width: 600px; }
+    }
     main h3 { margin-top: 2rem; }
     main details { margin-bottom: 0.5rem; }
   </style>
@@ -115,7 +117,7 @@
 
   <h2>The index</h2>
 
-  <div class="mkt-figure">
+  <div class="figure-card mkt-figure">
 <svg viewBox="0 0 840 384" role="img" class="mkt-chart" aria-label="North Korean marketization by dimension across five periods. Scores are shares of respondents rescaled to a nought-to-five scale, so 5 would mean every respondent reported the behaviour.">
 <title>North Korean marketization index, 1990s–2020, by dimension</title>
 <line x1="44" y1="308.0" x2="714" y2="308.0" stroke="#e6e4dc" stroke-width="1"/>

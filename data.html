@@ -25,8 +25,7 @@
 
   <style>
     .ds { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2rem; }
-    .ds-thumb { width: 100%; height: auto; display: block; border: 1px solid var(--border);
-      border-radius: 6px; background: var(--surface); margin: 0.9rem 0; }
+    .ds .figure-card { margin: 0.9rem 0; }
     .ds-meta { font-size: 0.85rem; color: var(--text-muted); margin: 0.3rem 0 0.8rem; }
   </style>
 </head>
@@ -63,8 +62,10 @@
       and positive components, and four subtopic series &mdash; military tensions, sanctions, talks,
       and economic cooperation.
     </p>
-    <a href="gprnk.html"><img class="ds-thumb" src="data/gprnk/gprnk-index.png"
-      alt="The GPRNK index plotted monthly from 1995 to 2025, with peaks at nuclear tests and troughs around inter-Korean summits." loading="lazy"></a>
+    <div class="figure-card">
+      <a href="gprnk.html"><img src="data/gprnk/gprnk-index.png"
+        alt="The GPRNK index plotted monthly from 1995 to 2025, with peaks at nuclear tests and troughs around inter-Korean summits." loading="lazy"></a>
+    </div>
     <p style="font-size:0.85rem; color:var(--text-muted);">
       From Lee, Lee and Jung (2026), <em>Applied Economics Letters</em>.
       <a href="gprnk.html">Open the dataset &rarr;</a>
@@ -76,13 +77,15 @@
     <p class="ds-meta">Five periods · before 2000 – 2016–2020 · CSV · CC BY 4.0</p>
     <p>
       How far the North Korean economy has moved toward the market in three dimensions &mdash; price
-      liberalization, privatization and financial development &mdash; each scored on a five-point
-      scale. It applies the method of Jung, Yang and Kim (2022) to the Ministry of Unification&rsquo;s
-      published survey of 6,351 defectors, so that unlike the original index it can be reproduced
-      from public sources.
+      liberalization, privatization and financial development. Each score is a share of respondents
+      rescaled to run 0&ndash;5, so a 5 would mean everyone reported the behaviour. It applies the
+      method of Jung, Yang and Kim (2022) to the Ministry of Unification&rsquo;s published survey of
+      6,351 defectors, so that unlike the original index it can be reproduced from public sources.
     </p>
-    <a href="marketization.html"><img class="ds-thumb" src="data/marketization/nk-marketization-index.svg"
-      alt="Grouped bars showing price liberalization near 2.9, privatization rising steadily to 1.09, and financial development flat near 0.2, across five periods." loading="lazy"></a>
+    <div class="figure-card">
+      <a href="marketization.html"><img src="data/marketization/nk-marketization-index.svg"
+        alt="Line chart of North Korean marketization across five periods to 2020: price liberalization rising to 2.91, privatization climbing steadily to 1.09, and financial development almost flat at 0.28." loading="lazy"></a>
+    </div>
     <p style="font-size:0.85rem; color:var(--text-muted);">
       Method from Jung, Yang and Kim (2022), <em>Asian Perspective</em>.
       <a href="marketization.html">Open the dataset &rarr;</a>
