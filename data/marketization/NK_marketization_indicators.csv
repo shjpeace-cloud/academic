@@ -1,66 +1,66 @@
-subarea,figure,indicator,period,percent
-A1,II-24,생산품 처리 시 시장가격 비중,before_2000,10.500
-A1,II-24,생산품 처리 시 시장가격 비중,2001-2005,14.400
-A1,II-24,생산품 처리 시 시장가격 비중,2006-2010,23.900
-A1,II-24,생산품 처리 시 시장가격 비중,2011-2015,19.700
-A1,II-24,생산품 처리 시 시장가격 비중,2016-2020,19.800
-A1,II-22,원자재 조달 시 시장가격 비중,before_2000,11.800
-A1,II-22,원자재 조달 시 시장가격 비중,2001-2005,16.700
-A1,II-22,원자재 조달 시 시장가격 비중,2006-2010,22.900
-A1,II-22,원자재 조달 시 시장가격 비중,2011-2015,19.000
-A1,II-22,원자재 조달 시 시장가격 비중,2016-2020,27.400
-A2,III-7,의복 시장가격 구매 비중,before_2000,73.300
-A2,III-7,의복 시장가격 구매 비중,2001-2005,85.800
-A2,III-7,의복 시장가격 구매 비중,2006-2010,90.800
-A2,III-7,의복 시장가격 구매 비중,2011-2015,93.900
-A2,III-7,의복 시장가격 구매 비중,2016-2020,92.800
-B1,II-92,개인운영: 중앙공장,before_2000,5.800
-B1,II-92,개인운영: 중앙공장,2001-2005,5.100
-B1,II-92,개인운영: 중앙공장,2006-2010,9.700
-B1,II-92,개인운영: 중앙공장,2011-2015,15.600
-B1,II-92,개인운영: 중앙공장,2016-2020,20.300
-B1,II-91,개인운영: 지방공장,before_2000,5.700
-B1,II-91,개인운영: 지방공장,2001-2005,6.400
-B1,II-91,개인운영: 지방공장,2006-2010,10.600
-B1,II-91,개인운영: 지방공장,2011-2015,16.700
-B1,II-91,개인운영: 지방공장,2016-2020,21.400
-B1,II-96,개인운영: 외화벌이·무역회사,before_2000,6.600
-B1,II-96,개인운영: 외화벌이·무역회사,2001-2005,9.800
-B1,II-96,개인운영: 외화벌이·무역회사,2006-2010,16.000
-B1,II-96,개인운영: 외화벌이·무역회사,2011-2015,25.900
-B1,II-96,개인운영: 외화벌이·무역회사,2016-2020,37.400
-B1,II-93,개인운영: 상점,before_2000,5.900
-B1,II-93,개인운영: 상점,2001-2005,10.400
-B1,II-93,개인운영: 상점,2006-2010,17.000
-B1,II-93,개인운영: 상점,2011-2015,31.300
-B1,II-93,개인운영: 상점,2016-2020,47.900
-B2,II-77,삯벌이 해본 경험,before_2000,4.500
-B2,II-77,삯벌이 해본 경험,2001-2005,6.200
-B2,II-77,삯벌이 해본 경험,2006-2010,8.600
-B2,II-77,삯벌이 해본 경험,2011-2015,12.800
-B2,II-77,삯벌이 해본 경험,2016-2020,14.700
-B2,II-78,삯벌이 시켜본 경험,before_2000,1.200
-B2,II-78,삯벌이 시켜본 경험,2001-2005,2.000
-B2,II-78,삯벌이 시켜본 경험,2006-2010,3.900
-B2,II-78,삯벌이 시켜본 경험,2011-2015,10.600
-B2,II-78,삯벌이 시켜본 경험,2016-2020,17.200
-B3,II-80,주택 판매 경험,before_2000,3.800
-B3,II-80,주택 판매 경험,2001-2005,5.000
-B3,II-80,주택 판매 경험,2006-2010,6.800
-B3,II-80,주택 판매 경험,2011-2015,8.500
-B3,II-80,주택 판매 경험,2016-2020,15.300
-B3,II-80,주택 구매 경험,before_2000,1.700
-B3,II-80,주택 구매 경험,2001-2005,3.800
-B3,II-80,주택 구매 경험,2006-2010,6.800
-B3,II-80,주택 구매 경험,2011-2015,14.200
-B3,II-80,주택 구매 경험,2016-2020,20.500
-C1,II-71x72,타인그룹 사금융 이용률,before_2000,2.604
-C1,II-71x72,타인그룹 사금융 이용률,2001-2005,3.090
-C1,II-71x72,타인그룹 사금융 이용률,2006-2010,5.101
-C1,II-71x72,타인그룹 사금융 이용률,2011-2015,5.810
-C1,II-71x72,타인그룹 사금융 이용률,2016-2020,8.438
-C2,II-39,은행·저금소 보관,before_2000,5.700
-C2,II-39,은행·저금소 보관,2001-2005,1.800
-C2,II-39,은행·저금소 보관,2006-2010,1.400
-C2,II-39,은행·저금소 보관,2011-2015,0.800
-C2,II-39,은행·저금소 보관,2016-2020,2.900
+﻿subarea,figure,indicator,indicator_ko,period,percent
+A1,II-24,"Share of output disposed of at market prices","생산품 처리 시 시장가격 비중",before_2000,10.500
+A1,II-24,"Share of output disposed of at market prices","생산품 처리 시 시장가격 비중",2001-2005,14.400
+A1,II-24,"Share of output disposed of at market prices","생산품 처리 시 시장가격 비중",2006-2010,23.900
+A1,II-24,"Share of output disposed of at market prices","생산품 처리 시 시장가격 비중",2011-2015,19.700
+A1,II-24,"Share of output disposed of at market prices","생산품 처리 시 시장가격 비중",2016-2020,19.800
+A1,II-22,"Share of inputs procured at market prices","원자재 조달 시 시장가격 비중",before_2000,11.800
+A1,II-22,"Share of inputs procured at market prices","원자재 조달 시 시장가격 비중",2001-2005,16.700
+A1,II-22,"Share of inputs procured at market prices","원자재 조달 시 시장가격 비중",2006-2010,22.900
+A1,II-22,"Share of inputs procured at market prices","원자재 조달 시 시장가격 비중",2011-2015,19.000
+A1,II-22,"Share of inputs procured at market prices","원자재 조달 시 시장가격 비중",2016-2020,27.400
+A2,III-7,"Clothing bought at market rather than state prices","의복 시장가격 구매 비중",before_2000,73.300
+A2,III-7,"Clothing bought at market rather than state prices","의복 시장가격 구매 비중",2001-2005,85.800
+A2,III-7,"Clothing bought at market rather than state prices","의복 시장가격 구매 비중",2006-2010,90.800
+A2,III-7,"Clothing bought at market rather than state prices","의복 시장가격 구매 비중",2011-2015,93.900
+A2,III-7,"Clothing bought at market rather than state prices","의복 시장가격 구매 비중",2016-2020,92.800
+B1,II-92,"Central factories under private operation","개인운영 비중 추측치: 중앙공장",before_2000,5.800
+B1,II-92,"Central factories under private operation","개인운영 비중 추측치: 중앙공장",2001-2005,5.100
+B1,II-92,"Central factories under private operation","개인운영 비중 추측치: 중앙공장",2006-2010,9.700
+B1,II-92,"Central factories under private operation","개인운영 비중 추측치: 중앙공장",2011-2015,15.600
+B1,II-92,"Central factories under private operation","개인운영 비중 추측치: 중앙공장",2016-2020,20.300
+B1,II-91,"Local factories under private operation","개인운영 비중 추측치: 지방공장",before_2000,5.700
+B1,II-91,"Local factories under private operation","개인운영 비중 추측치: 지방공장",2001-2005,6.400
+B1,II-91,"Local factories under private operation","개인운영 비중 추측치: 지방공장",2006-2010,10.600
+B1,II-91,"Local factories under private operation","개인운영 비중 추측치: 지방공장",2011-2015,16.700
+B1,II-91,"Local factories under private operation","개인운영 비중 추측치: 지방공장",2016-2020,21.400
+B1,II-96,"Trading companies under private operation","개인운영 비중 추측치: 외화벌이사업소·무역회사",before_2000,6.600
+B1,II-96,"Trading companies under private operation","개인운영 비중 추측치: 외화벌이사업소·무역회사",2001-2005,9.800
+B1,II-96,"Trading companies under private operation","개인운영 비중 추측치: 외화벌이사업소·무역회사",2006-2010,16.000
+B1,II-96,"Trading companies under private operation","개인운영 비중 추측치: 외화벌이사업소·무역회사",2011-2015,25.900
+B1,II-96,"Trading companies under private operation","개인운영 비중 추측치: 외화벌이사업소·무역회사",2016-2020,37.400
+B1,II-93,"State shops under private operation","개인운영 비중 추측치: 상점",before_2000,5.900
+B1,II-93,"State shops under private operation","개인운영 비중 추측치: 상점",2001-2005,10.400
+B1,II-93,"State shops under private operation","개인운영 비중 추측치: 상점",2006-2010,17.000
+B1,II-93,"State shops under private operation","개인운영 비중 추측치: 상점",2011-2015,31.300
+B1,II-93,"State shops under private operation","개인운영 비중 추측치: 상점",2016-2020,47.900
+B2,II-77,"Has worked for private hire","사적 고용(삯벌이)을 해본 경험",before_2000,4.500
+B2,II-77,"Has worked for private hire","사적 고용(삯벌이)을 해본 경험",2001-2005,6.200
+B2,II-77,"Has worked for private hire","사적 고용(삯벌이)을 해본 경험",2006-2010,8.600
+B2,II-77,"Has worked for private hire","사적 고용(삯벌이)을 해본 경험",2011-2015,12.800
+B2,II-77,"Has worked for private hire","사적 고용(삯벌이)을 해본 경험",2016-2020,14.700
+B2,II-78,"Has hired others privately","사적 고용(삯벌이)을 시켜본 경험",before_2000,1.200
+B2,II-78,"Has hired others privately","사적 고용(삯벌이)을 시켜본 경험",2001-2005,2.000
+B2,II-78,"Has hired others privately","사적 고용(삯벌이)을 시켜본 경험",2006-2010,3.900
+B2,II-78,"Has hired others privately","사적 고용(삯벌이)을 시켜본 경험",2011-2015,10.600
+B2,II-78,"Has hired others privately","사적 고용(삯벌이)을 시켜본 경험",2016-2020,17.200
+B3,II-80,"Has sold a home","주택 판매 경험",before_2000,3.800
+B3,II-80,"Has sold a home","주택 판매 경험",2001-2005,5.000
+B3,II-80,"Has sold a home","주택 판매 경험",2006-2010,6.800
+B3,II-80,"Has sold a home","주택 판매 경험",2011-2015,8.500
+B3,II-80,"Has sold a home","주택 판매 경험",2016-2020,15.300
+B3,II-80,"Has bought a home","주택 구매 경험",before_2000,1.700
+B3,II-80,"Has bought a home","주택 구매 경험",2001-2005,3.800
+B3,II-80,"Has bought a home","주택 구매 경험",2006-2010,6.800
+B3,II-80,"Has bought a home","주택 구매 경험",2011-2015,14.200
+B3,II-80,"Has bought a home","주택 구매 경험",2016-2020,20.500
+C1,II-71 x II-72,"Borrowed privately, from a lender outside the family","사금융 이용 × 타인그룹 비중",before_2000,2.604
+C1,II-71 x II-72,"Borrowed privately, from a lender outside the family","사금융 이용 × 타인그룹 비중",2001-2005,3.090
+C1,II-71 x II-72,"Borrowed privately, from a lender outside the family","사금융 이용 × 타인그룹 비중",2006-2010,5.101
+C1,II-71 x II-72,"Borrowed privately, from a lender outside the family","사금융 이용 × 타인그룹 비중",2011-2015,5.810
+C1,II-71 x II-72,"Borrowed privately, from a lender outside the family","사금융 이용 × 타인그룹 비중",2016-2020,8.438
+C2,II-39,"Kept spare cash in a bank or savings office","여유자금을 은행·저금소에 보관",before_2000,5.700
+C2,II-39,"Kept spare cash in a bank or savings office","여유자금을 은행·저금소에 보관",2001-2005,1.800
+C2,II-39,"Kept spare cash in a bank or savings office","여유자금을 은행·저금소에 보관",2006-2010,1.400
+C2,II-39,"Kept spare cash in a bank or savings office","여유자금을 은행·저금소에 보관",2011-2015,0.800
+C2,II-39,"Kept spare cash in a bank or savings office","여유자금을 은행·저금소에 보관",2016-2020,2.900
