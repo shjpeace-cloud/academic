@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 840 384" role="img" xmlns="http://www.w3.org/2000/svg" width="840" height="384" style="background:#fff" aria-label="North Korean marketization by dimension across five periods. Scores are shares of respondents rescaled to a nought-to-five scale, so 5 would mean every respondent reported the behaviour.">
+<svg viewBox="0 0 840 400" role="img" xmlns="http://www.w3.org/2000/svg" width="840" height="400" style="background:#fff" aria-label="North Korean marketization by dimension across five periods. Scores are shares of respondents rescaled to a nought-to-five scale, so 5 would mean every respondent reported the behaviour.">
 <title>North Korean marketization index, 1990s–2020, by dimension</title>
 <line x1="44" y1="308.0" x2="714" y2="308.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="312.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">0</text>
@@ -23,50 +23,62 @@
 <path d="M111.0,194.0 L245.0,171.2 L379.0,153.8 L513.0,155.1 L647.0,150.9" fill="none" stroke="#34689c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <g class="mkt-bar"><title>Before 2000 — Price liberalization: 2.111
 Enterprise (A1) 0.56 · Household (A2) 3.67</title><circle cx="111.0" cy="194.0" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="111.0" y="183.0" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">2.11</text>
 <g class="mkt-bar"><title>2001–2005 — Price liberalization: 2.534
 Enterprise (A1) 0.78 · Household (A2) 4.29</title><circle cx="245.0" cy="171.2" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="245.0" y="160.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">2.53</text>
 <g class="mkt-bar"><title>2006–2010 — Price liberalization: 2.855
 Enterprise (A1) 1.17 · Household (A2) 4.54</title><circle cx="379.0" cy="153.8" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="379.0" y="142.8" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">2.85</text>
 <g class="mkt-bar"><title>2011–2015 — Price liberalization: 2.831
 Enterprise (A1) 0.97 · Household (A2) 4.70</title><circle cx="513.0" cy="155.1" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="513.0" y="144.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">2.83</text>
 <g class="mkt-bar"><title>2016–2020 — Price liberalization: 2.910
 Enterprise (A1) 1.18 · Household (A2) 4.64</title><circle cx="647.0" cy="150.9" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
-<text x="714" y="138.9" text-anchor="end" font-size="12" fill="#34689c">Price liberalization 2.91</text>
+<text x="714" y="138.9" text-anchor="end" font-size="12" fill="#34689c" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">Price liberalization 2.91</text>
 <path d="M111.0,297.6 L245.0,293.2 L379.0,284.2 L513.0,267.1 L647.0,249.0" fill="none" stroke="#b8862a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <g class="mkt-bar"><title>Before 2000 — Privatization: 0.193
 Private operation (B1) 0.30 · Private employment (B2) 0.14 · Real estate (B3) 0.14</title><circle cx="111.0" cy="297.6" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
+<text x="111.0" y="286.6" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.19</text>
 <g class="mkt-bar"><title>2001–2005 — Privatization: 0.274
 Private operation (B1) 0.40 · Private employment (B2) 0.20 · Real estate (B3) 0.22</title><circle cx="245.0" cy="293.2" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
+<text x="245.0" y="282.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.27</text>
 <g class="mkt-bar"><title>2006–2010 — Privatization: 0.440
 Private operation (B1) 0.67 · Private employment (B2) 0.31 · Real estate (B3) 0.34</title><circle cx="379.0" cy="284.2" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
+<text x="379.0" y="273.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.44</text>
 <g class="mkt-bar"><title>2011–2015 — Privatization: 0.757
 Private operation (B1) 1.12 · Private employment (B2) 0.58 · Real estate (B3) 0.57</title><circle cx="513.0" cy="267.1" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
+<text x="513.0" y="256.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.76</text>
 <g class="mkt-bar"><title>2016–2020 — Privatization: 1.093
 Private operation (B1) 1.59 · Private employment (B2) 0.80 · Real estate (B3) 0.90</title><circle cx="647.0" cy="249.0" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
-<text x="714" y="237.0" text-anchor="end" font-size="12" fill="#b8862a">Privatization 1.09</text>
+<text x="714" y="237.0" text-anchor="end" font-size="12" fill="#b8862a" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">Privatization 1.09</text>
 <path d="M111.0,296.8 L245.0,301.4 L379.0,299.2 L513.0,299.1 L647.0,292.7" fill="none" stroke="#94518c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <g class="mkt-bar"><title>Before 2000 — Financial development: 0.208
 Informal finance (C1) 0.13 · Formal banking (C2) 0.28</title><circle cx="111.0" cy="296.8" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="111.0" y="313.8" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.21</text>
 <g class="mkt-bar"><title>2001–2005 — Financial development: 0.122
 Informal finance (C1) 0.15 · Formal banking (C2) 0.09</title><circle cx="245.0" cy="301.4" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="245.0" y="318.4" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.12</text>
 <g class="mkt-bar"><title>2006–2010 — Financial development: 0.163
 Informal finance (C1) 0.26 · Formal banking (C2) 0.07</title><circle cx="379.0" cy="299.2" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="379.0" y="316.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.16</text>
 <g class="mkt-bar"><title>2011–2015 — Financial development: 0.165
 Informal finance (C1) 0.29 · Formal banking (C2) 0.04</title><circle cx="513.0" cy="299.1" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
+<text x="513.0" y="316.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.17</text>
 <g class="mkt-bar"><title>2016–2020 — Financial development: 0.283
 Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><circle cx="647.0" cy="292.7" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
-<text x="714" y="280.7" text-anchor="end" font-size="12" fill="#94518c">Financial development 0.28</text>
-<text x="111.0" y="330" text-anchor="middle" font-size="13" fill="#1c1c1c">Before 2000</text>
-<text x="245.0" y="330" text-anchor="middle" font-size="13" fill="#1c1c1c">2001–2005</text>
-<text x="379.0" y="330" text-anchor="middle" font-size="13" fill="#1c1c1c">2006–2010</text>
-<text x="513.0" y="330" text-anchor="middle" font-size="13" fill="#1c1c1c">2011–2015</text>
-<text x="647.0" y="330" text-anchor="middle" font-size="13" fill="#1c1c1c">2016–2020</text>
-<rect x="44" y="350" width="10" height="10" rx="2" fill="#34689c"/>
-<text x="59" y="359" font-size="13" fill="#6b6b6b">Price liberalization</text>
-<rect x="227.0" y="350" width="10" height="10" rx="2" fill="#b8862a"/>
-<text x="242.0" y="359" font-size="13" fill="#6b6b6b">Privatization</text>
-<rect x="360.3" y="350" width="10" height="10" rx="2" fill="#94518c"/>
-<text x="375.3" y="359" font-size="13" fill="#6b6b6b">Financial development</text>
+<text x="714" y="312.7" text-anchor="end" font-size="12" fill="#94518c" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">Financial development 0.28</text>
+<text x="111.0" y="344" text-anchor="middle" font-size="13" fill="#1c1c1c">Before 2000</text>
+<text x="245.0" y="344" text-anchor="middle" font-size="13" fill="#1c1c1c">2001–2005</text>
+<text x="379.0" y="344" text-anchor="middle" font-size="13" fill="#1c1c1c">2006–2010</text>
+<text x="513.0" y="344" text-anchor="middle" font-size="13" fill="#1c1c1c">2011–2015</text>
+<text x="647.0" y="344" text-anchor="middle" font-size="13" fill="#1c1c1c">2016–2020</text>
+<rect x="44" y="364" width="10" height="10" rx="2" fill="#34689c"/>
+<text x="59" y="373" font-size="13" fill="#6b6b6b">Price liberalization</text>
+<rect x="227.0" y="364" width="10" height="10" rx="2" fill="#b8862a"/>
+<text x="242.0" y="373" font-size="13" fill="#6b6b6b">Privatization</text>
+<rect x="360.3" y="364" width="10" height="10" rx="2" fill="#94518c"/>
+<text x="375.3" y="373" font-size="13" fill="#6b6b6b">Financial development</text>
 <text x="35" y="16" text-anchor="end" font-size="11.5" fill="#6b6b6b">score</text>
 <text x="726" y="16" font-size="11" fill="#8b8981">share of respondents</text>
 </svg>
