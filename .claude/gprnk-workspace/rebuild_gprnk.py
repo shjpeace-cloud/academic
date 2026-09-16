@@ -535,6 +535,13 @@ COMMANDS = {
 }
 
 if __name__ == "__main__":
+    # Outlet names are Korean; the Windows console here defaults to cp949.
+    for _stream in (sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
     if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
         raise SystemExit(f"usage: {Path(__file__).name} "
                          f"[{' | '.join(COMMANDS)}]")

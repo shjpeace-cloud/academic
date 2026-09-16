@@ -1,11 +1,35 @@
 """
 Generate the one-page CV as .docx, for export to the PDF the site links.
 
-    python .claude/tools/build_cv.py
+    python .claude/tools/build_cv.py            write the .docx
+    python .claude/tools/build_cv.py --check    is the published PDF stale?
 
 Writes .claude/cv/CV_Seung-Ho_JUNG(YYYYMMDD).docx. Convert it to PDF with Word
 (the accompanying PowerShell one-liner, or File > Save as PDF), drop the PDF in
 data/, and point cv.html at it -- see CLAUDE.md work rule 5.
+
+Keeping it current
+------------------
+--check reads the PDF cv.html actually links, pulls its text, and compares it
+against what the CV should say today. It reports two things:
+
+  stale       a selected entry's details are not in the published PDF -- an
+              article moved from forthcoming to paginated, a DOI landed, a
+              constant below changed. Exits 1.
+  candidates  English journal articles in publications.json that are not in
+              SELECTED. Informational only: which publications belong on a CV
+              is a judgement, not a rule. The current six are not the six most
+              recent, so no recency rule would reproduce them -- deciding is
+              the author's, and this only makes sure the decision gets asked.
+
+The Stop hook runs --check whenever publications.json or this file changes, so
+a new SSCI article cannot quietly leave the CV behind.
+
+What is NOT automatic: the PDF itself. ExportAsFixedFormat needs Word, which
+lives on this machine and not in CI, so no GitHub Action can produce it. And a
+career change -- a promotion, a move, a new degree -- is not derivable from any
+data file; those are the constants below, and they need a human to say so.
+--check cannot detect a promotion, only remind you that this block exists.
 
 The previous PDF was hand-made and printed from Word, so it drifted: it still
 sent readers to the old Google Sites, carried no ORCID, listed the Asian
@@ -22,9 +46,13 @@ currently on teaching.html: a CV lists what you have taught, and dropping the
 rest would lose information the site never carried.
 """
 
+import argparse
 import datetime as dt
 import json
+import re
+import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_TAB_ALIGNMENT
@@ -232,8 +260,125 @@ def build(doc, pubs):
         para(doc, course, indent=0.36, space_before=2)
 
 
+# Dash and quote variants that mean the same thing to a reader but not to
+# a string comparison. The previous CV wrote a page range with a fullwidth
+# dash, which is a formatting difference, not a stale entry.
+_FOLD = str.maketrans({
+    "–": "-", "—": "-", "‒": "-", "‑": "-",
+    "−": "-", "－": "-", "〜": "~", "～": "~",
+    "“": '"', "”": '"', "‘": "'", "’": "'",
+})
+
+
+def squash(s: str) -> str:
+    """Whitespace-free, dash-folded lowercase, for matching PDF text.
+
+    Extraction sprays spaces through words ("COVID -19", "shjpeace-\\ncloud"),
+    so any comparison that respects spacing produces false alarms.
+    """
+    return "".join(s.translate(_FOLD).split()).lower()
+
+
+def published_pdf() -> Path:
+    """The PDF cv.html links, so the check follows the site rather than a guess."""
+    page = (ROOT / "cv.html").read_text(encoding="utf-8")
+    m = re.search(r'href="(data/CV_[^"]+\.pdf)"', page)
+    if not m:
+        raise SystemExit("no CV link found in cv.html")
+    return ROOT / unquote(m.group(1))
+
+
+def check(pubs) -> int:
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        print("check needs pypdf (pip install pypdf)", file=sys.stderr)
+        return 0                               # never block on a missing dep
+
+    pdf = published_pdf()
+    if not pdf.exists():
+        print(f"cv.html links {pdf.name}, which is missing", file=sys.stderr)
+        return 1
+
+    text = squash("".join(pg.extract_text() or ""
+                          for pg in PdfReader(str(pdf)).pages))
+    by_id = {p["id"]: p for p in pubs}
+
+    stale = []
+    for i in SELECTED:
+        p = by_id.get(i)
+        if p is None:
+            stale.append(f"id {i} is in SELECTED but not in publications.json")
+            continue
+        # Distinctive, and exactly the things that change after acceptance.
+        probes = [("title", p["title"][:44])]
+        if p.get("volume"):
+            probes.append(("volume", str(p["volume"])))
+        for what, probe in probes:
+            if squash(probe) not in text:
+                stale.append(f'id {i} {what} "{probe}" is not in the PDF'
+                             f' — {p["title"][:52]}')
+
+        # Page ranges get written with every separator there is (en dash,
+        # tilde, fullwidth dash), so match the numbers and ignore what joins
+        # them -- the point is whether the article is still unpaginated.
+        if p.get("pages"):
+            nums = re.findall(r"\d+", p["pages"])
+            if nums and not re.search(r"[^0-9]{0,3}".join(nums), text):
+                stale.append(f'id {i} pages "{p["pages"]}" are not in the PDF'
+                             f' — {p["title"][:52]}')
+
+    # Career facts live in the constants, not in any data file; the most a
+    # check can do is notice the PDF no longer says what they say.
+    for label, value in [("site", SITE.rstrip("/")), ("ORCID", ORCID),
+                         ("position", EXPERIENCE[0][0][:40])]:
+        if squash(value) not in text:
+            stale.append(f"{label} in the PDF differs from the constants here")
+
+    english = [p for p in pubs if p["type"] == "journal-en"
+               and p["id"] not in SELECTED]
+    english.sort(key=lambda p: (-p["year"], -p["id"]))
+
+    print(f"CV check against {pdf.name}")
+    if stale:
+        print(f"  STALE ({len(stale)}):")
+        for line in stale:
+            print(f"    {line}")
+        print("    -> rebuild: python .claude/tools/build_cv.py, export with "
+              "Word, update cv.html")
+    else:
+        print(f"  up to date ({len(SELECTED)} selected entries verified)")
+
+    if english:
+        print(f"  not in Selected Publications ({len(english)} English "
+              f"journal articles) — include any?")
+        for p in english[:6]:
+            print(f"    id {p['id']:>3}  {p['year']}  {p['journal'][:32]:<32} "
+                  f"{p['title'][:44]}")
+        if len(english) > 6:
+            print(f"    ... and {len(english) - 6} older")
+
+    return 1 if stale else 0
+
+
 def main():
+    # This prints dashes and quotation marks, and the Windows console defaults
+    # to cp949 here, which cannot encode them.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
+    ap = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
+    ap.add_argument("--check", action="store_true",
+                    help="report whether the published PDF is out of date")
+    args = ap.parse_args()
+
     pubs = json.loads(PUBS.read_text(encoding="utf-8"))
+    if args.check:
+        return check(pubs)
+
     doc = Document()
     build(doc, pubs)
 
@@ -243,7 +388,8 @@ def main():
     doc.save(out)
     print(f"wrote {out.relative_to(ROOT)}")
     print("convert with Word, then put the PDF in data/ and update cv.html")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

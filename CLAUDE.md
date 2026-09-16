@@ -280,7 +280,8 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
    — **`.claude/tools/build_publications.py`의 같은 상수 2개도 함께** (JS와 생성기가 쌍으로 움직인다)
 5. **`python .claude/tools/build_publications.py` 실행** ← 필수. 안 돌리면 JSON에는 있고
    정적 HTML에는 없어 크롤러에 안 보인다. `--check`로 stale 여부만 확인 가능
-6. 즉시 commit + push
+6. **SSCI/영문 저널이면 CV 갱신 여부 판단** — 아래 규칙 5-a
+7. 즉시 commit + push
 
 ### 4. 새 current project 추가 시
 
@@ -290,9 +291,41 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 
 ### 5. CV 업데이트 시
 
-새 PDF를 `data/CV_Seung-Ho_JUNG(YYYYMMDD).pdf`로 배치 (옛 PDF 그대로 둬도 됨 — 링크만 갈아끼움). `cv.html`의 두 곳 갱신:
-- `<a class="cv-download" href="data/CV_Seung-Ho_JUNG%28YYYYMMDD%29.pdf">` (URL-encoded 괄호)
-- `Last updated: ...` 라인
+**PDF는 `.claude/tools/build_cv.py`로 생성한다. 손으로 만들지 않는다.**
+
+1. `python .claude/tools/build_cv.py` → `.claude/cv/CV_Seung-Ho_JUNG(YYYYMMDD).docx` (gitignored)
+2. Word로 PDF 내보내기 (`ExportAsFixedFormat`, 아래 PowerShell). **CI 불가 — Word가 이 PC에만 있다**
+3. PDF를 `data/CV_Seung-Ho_JUNG(YYYYMMDD).pdf`로 배치 (옛 PDF는 그대로 둔다 — 공유된 링크가 깨지지 않게)
+4. `cv.html` 두 곳 갱신:
+   - `<a class="cv-download" href="data/CV_Seung-Ho_JUNG%28YYYYMMDD%29.pdf">` (URL-encoded 괄호)
+   - `Last updated: ...` 라인
+5. `python .claude/tools/build_cv.py --check` → `up to date` 확인
+
+```powershell
+$w = New-Object -ComObject Word.Application; $w.Visible = $false
+$d = $w.Documents.Open("<docx 절대경로>", $false, $true)
+$d.ExportAsFixedFormat("<pdf 절대경로>", 17)
+$d.Close($false); $w.Quit()
+```
+
+### 5-a. CV 자동 갱신의 경계 (2026-09-16)
+
+| 항목 | 자동? |
+|---|---|
+| 선택된 논문의 권·호·페이지·DOI·교신저자 표시 | **자동** — `publications.json`에서 id로 조회 |
+| 게재/승격/이동 **감지** | **자동** — `--check`가 Stop 훅에서 돌며 경고 |
+| SSCI 신규 논문을 Selected에 **포함할지** | **수동 판단** ↓ |
+| PDF 내보내기 | **수동** — Word 의존, CI 불가 |
+| 경력 변화(직위·소속·학위) | **수동** — 어떤 데이터 파일로도 유도 불가. `build_cv.py` 상단 상수 |
+
+**Selected Publications는 규칙으로 뽑지 않는다.** 현재 6편은 최신 6편이 아니다
+(2025년 Seoul Journal of Economics·COVID을 건너뛰고 2024 KJDA·2022 Asian Perspective를 넣었다).
+저널 위상과 주제 적합성을 본 **사용자의 편집 판단**이므로, Claude가 recency 규칙으로 대체하면 안 된다.
+`--check`는 SELECTED에 없는 영문 저널 논문을 **후보로 나열만** 하고, 넣을지는 사용자에게 묻는다.
+
+**Stop 훅 연동**: `auto-push.sh`가 `publications.json` 또는 `build_cv.py`가 바뀐 턴에만
+`--check`를 돌리고, stale이면 push 메시지에 한 줄 덧붙인다. 경고일 뿐 push를 막지 않는다
+(어차피 이 훅에서는 Word를 못 부른다).
 
 ### 5-b. GPRNK 지수 월간 갱신 시
 
