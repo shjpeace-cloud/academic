@@ -43,6 +43,10 @@ __pycache__/
 .claude/gprnk-workspace/rebuilt.csv
 .claude/gprnk-workspace/base_params.json
 
+# Editable CV source (build_cv.py output). Only the exported PDF in data/ is
+# published; keeping the .docx out avoids a second source of truth in the repo.
+.claude/cv/
+
 # Working papers / manuscripts dropped here for Claude to read.
 # Unpublished drafts must never reach this public repo.
 .claude/papers/
