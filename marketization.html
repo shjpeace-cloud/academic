@@ -57,9 +57,9 @@
   </script>
 
   <style>
-    /* Below ~620px the value labels would scale under 9px, so the figure
+    /* Below ~720px the value labels would scale under 9px, so the figure
        scrolls sideways rather than shrinking past legibility. */
-    .mkt-chart { width: 100%; min-width: 620px; height: auto; display: block; }
+    .mkt-chart { width: 100%; min-width: 720px; height: auto; display: block; }
     .mkt-bar path { transition: opacity .12s ease; }
     .mkt-bar:hover path { opacity: .78; }
     .mkt-figure { background: var(--surface); border: 1px solid var(--border);
@@ -116,69 +116,73 @@
   <h2>The index</h2>
 
   <div class="mkt-figure">
-<svg viewBox="0 0 760 384" role="img" class="mkt-chart" aria-label="North Korean marketization index by dimension, five periods, on a five-point scale">
+<svg viewBox="0 0 900 384" role="img" class="mkt-chart" aria-label="North Korean marketization by dimension across five periods, on a one-to-five transition scale where 2 is the 1965 Kosygin reform and 5 is a substantially completed transition">
 <title>North Korean marketization index, 1990s–2020, by dimension</title>
-<line x1="44" y1="308.0" x2="746" y2="308.0" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="312.0" text-anchor="end" font-size="11.5" fill="#6b6b6b">0</text>
-<line x1="44" y1="250.8" x2="746" y2="250.8" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="254.8" text-anchor="end" font-size="11.5" fill="#6b6b6b">1</text>
-<line x1="44" y1="193.6" x2="746" y2="193.6" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="197.6" text-anchor="end" font-size="11.5" fill="#6b6b6b">2</text>
-<line x1="44" y1="136.4" x2="746" y2="136.4" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="140.4" text-anchor="end" font-size="11.5" fill="#6b6b6b">3</text>
-<line x1="44" y1="79.2" x2="746" y2="79.2" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="83.2" text-anchor="end" font-size="11.5" fill="#6b6b6b">4</text>
-<line x1="44" y1="22.0" x2="746" y2="22.0" stroke="#e1e0d9" stroke-width="1"/>
-<text x="35" y="26.0" text-anchor="end" font-size="11.5" fill="#6b6b6b">5</text>
-<line x1="44" y1="308" x2="746" y2="308" stroke="#c3c2b7" stroke-width="1"/>
+<line x1="44" y1="308.0" x2="714" y2="308.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="312.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">0</text>
+<line x1="44" y1="254.0" x2="714" y2="254.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="258.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">1</text>
+<text x="726" y="257.5" font-size="11.5" fill="#8b8981">classical planned economy</text>
+<line x1="44" y1="200.0" x2="714" y2="200.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="204.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">2</text>
+<text x="726" y="203.5" font-size="11.5" fill="#8b8981">Kosygin 1965 · China 1978</text>
+<line x1="44" y1="146.0" x2="714" y2="146.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="150.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">3</text>
+<text x="726" y="149.5" font-size="11.5" fill="#8b8981">perestroika · China 1980s</text>
+<line x1="44" y1="92.0" x2="714" y2="92.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="96.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">4</text>
+<line x1="44" y1="38.0" x2="714" y2="38.0" stroke="#e6e4dc" stroke-width="1"/>
+<text x="35" y="42.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">5</text>
+<text x="726" y="41.5" font-size="11.5" fill="#8b8981">transition substantially done</text>
+<line x1="44" y1="308" x2="714" y2="308" stroke="#c3c2b7" stroke-width="1"/>
 <g class="mkt-bar"><title>Before 2000 — Price liberalization: 2.111
-Enterprise (A1) 0.56 · Household (A2) 3.67</title><path d="M67.2,308.0 V191.3 Q67.2,187.3 71.2,187.3 H93.2 Q97.2,187.3 97.2,191.3 V308.0 Z" fill="#2a78d6"/><text x="82.2" y="181.3" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.11</text></g>
+Enterprise (A1) 0.56 · Household (A2) 3.67</title><path d="M64.0,308.0 V198.0 Q64.0,194.0 68.0,194.0 H90.0 Q94.0,194.0 94.0,198.0 V308.0 Z" fill="#34689c"/><text x="79.0" y="188.0" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.11</text></g>
 <g class="mkt-bar"><title>Before 2000 — Privatization: 0.193
-Private operation (B1) 0.30 · Private employment (B2) 0.14 · Real estate (B3) 0.14</title><path d="M99.2,308.0 V301.0 Q99.2,297.0 103.2,297.0 H125.2 Q129.2,297.0 129.2,301.0 V308.0 Z" fill="#eb6834"/><text x="114.2" y="291.0" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.19</text></g>
+Private operation (B1) 0.30 · Private employment (B2) 0.14 · Real estate (B3) 0.14</title><path d="M96.0,308.0 V301.6 Q96.0,297.6 100.0,297.6 H122.0 Q126.0,297.6 126.0,301.6 V308.0 Z" fill="#b8862a"/><text x="111.0" y="291.6" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.19</text></g>
 <g class="mkt-bar"><title>Before 2000 — Financial development: 0.208
-Informal finance (C1) 0.13 · Formal banking (C2) 0.28</title><path d="M131.2,308.0 V300.1 Q131.2,296.1 135.2,296.1 H157.2 Q161.2,296.1 161.2,300.1 V308.0 Z" fill="#1baf7a"/><text x="146.2" y="290.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.21</text></g>
-<text x="114.2" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">Before 2000</text>
+Informal finance (C1) 0.13 · Formal banking (C2) 0.28</title><path d="M128.0,308.0 V300.8 Q128.0,296.8 132.0,296.8 H154.0 Q158.0,296.8 158.0,300.8 V308.0 Z" fill="#94518c"/><text x="143.0" y="290.8" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.21</text></g>
+<text x="111.0" y="328" text-anchor="middle" font-size="13" fill="#1c1c1c">Before 2000</text>
 <g class="mkt-bar"><title>2001–2005 — Price liberalization: 2.534
-Enterprise (A1) 0.78 · Household (A2) 4.29</title><path d="M207.6,308.0 V167.1 Q207.6,163.1 211.6,163.1 H233.6 Q237.6,163.1 237.6,167.1 V308.0 Z" fill="#2a78d6"/><text x="222.6" y="157.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.53</text></g>
+Enterprise (A1) 0.78 · Household (A2) 4.29</title><path d="M198.0,308.0 V175.2 Q198.0,171.2 202.0,171.2 H224.0 Q228.0,171.2 228.0,175.2 V308.0 Z" fill="#34689c"/><text x="213.0" y="165.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.53</text></g>
 <g class="mkt-bar"><title>2001–2005 — Privatization: 0.274
-Private operation (B1) 0.40 · Private employment (B2) 0.20 · Real estate (B3) 0.22</title><path d="M239.6,308.0 V296.3 Q239.6,292.3 243.6,292.3 H265.6 Q269.6,292.3 269.6,296.3 V308.0 Z" fill="#eb6834"/><text x="254.6" y="286.3" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.27</text></g>
+Private operation (B1) 0.40 · Private employment (B2) 0.20 · Real estate (B3) 0.22</title><path d="M230.0,308.0 V297.2 Q230.0,293.2 234.0,293.2 H256.0 Q260.0,293.2 260.0,297.2 V308.0 Z" fill="#b8862a"/><text x="245.0" y="287.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.27</text></g>
 <g class="mkt-bar"><title>2001–2005 — Financial development: 0.122
-Informal finance (C1) 0.15 · Formal banking (C2) 0.09</title><path d="M271.6,308.0 V304.5 Q271.6,301.0 275.1,301.0 H298.1 Q301.6,301.0 301.6,304.5 V308.0 Z" fill="#1baf7a"/><text x="286.6" y="295.0" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.12</text></g>
-<text x="254.6" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2001–2005</text>
+Informal finance (C1) 0.15 · Formal banking (C2) 0.09</title><path d="M262.0,308.0 V304.7 Q262.0,301.4 265.3,301.4 H288.7 Q292.0,301.4 292.0,304.7 V308.0 Z" fill="#94518c"/><text x="277.0" y="295.4" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.12</text></g>
+<text x="245.0" y="328" text-anchor="middle" font-size="13" fill="#1c1c1c">2001–2005</text>
 <g class="mkt-bar"><title>2006–2010 — Price liberalization: 2.855
-Enterprise (A1) 1.17 · Household (A2) 4.54</title><path d="M348.0,308.0 V148.7 Q348.0,144.7 352.0,144.7 H374.0 Q378.0,144.7 378.0,148.7 V308.0 Z" fill="#2a78d6"/><text x="363.0" y="138.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.85</text></g>
+Enterprise (A1) 1.17 · Household (A2) 4.54</title><path d="M332.0,308.0 V157.8 Q332.0,153.8 336.0,153.8 H358.0 Q362.0,153.8 362.0,157.8 V308.0 Z" fill="#34689c"/><text x="347.0" y="147.8" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.85</text></g>
 <g class="mkt-bar"><title>2006–2010 — Privatization: 0.440
-Private operation (B1) 0.67 · Private employment (B2) 0.31 · Real estate (B3) 0.34</title><path d="M380.0,308.0 V286.8 Q380.0,282.8 384.0,282.8 H406.0 Q410.0,282.8 410.0,286.8 V308.0 Z" fill="#eb6834"/><text x="395.0" y="276.8" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.44</text></g>
+Private operation (B1) 0.67 · Private employment (B2) 0.31 · Real estate (B3) 0.34</title><path d="M364.0,308.0 V288.2 Q364.0,284.2 368.0,284.2 H390.0 Q394.0,284.2 394.0,288.2 V308.0 Z" fill="#b8862a"/><text x="379.0" y="278.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.44</text></g>
 <g class="mkt-bar"><title>2006–2010 — Financial development: 0.163
-Informal finance (C1) 0.26 · Formal banking (C2) 0.07</title><path d="M412.0,308.0 V302.7 Q412.0,298.7 416.0,298.7 H438.0 Q442.0,298.7 442.0,302.7 V308.0 Z" fill="#1baf7a"/><text x="427.0" y="292.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.16</text></g>
-<text x="395.0" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2006–2010</text>
+Informal finance (C1) 0.26 · Formal banking (C2) 0.07</title><path d="M396.0,308.0 V303.2 Q396.0,299.2 400.0,299.2 H422.0 Q426.0,299.2 426.0,303.2 V308.0 Z" fill="#94518c"/><text x="411.0" y="293.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.16</text></g>
+<text x="379.0" y="328" text-anchor="middle" font-size="13" fill="#1c1c1c">2006–2010</text>
 <g class="mkt-bar"><title>2011–2015 — Price liberalization: 2.831
-Enterprise (A1) 0.97 · Household (A2) 4.70</title><path d="M488.4,308.0 V150.1 Q488.4,146.1 492.4,146.1 H514.4 Q518.4,146.1 518.4,150.1 V308.0 Z" fill="#2a78d6"/><text x="503.4" y="140.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.83</text></g>
+Enterprise (A1) 0.97 · Household (A2) 4.70</title><path d="M466.0,308.0 V159.1 Q466.0,155.1 470.0,155.1 H492.0 Q496.0,155.1 496.0,159.1 V308.0 Z" fill="#34689c"/><text x="481.0" y="149.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.83</text></g>
 <g class="mkt-bar"><title>2011–2015 — Privatization: 0.757
-Private operation (B1) 1.12 · Private employment (B2) 0.58 · Real estate (B3) 0.57</title><path d="M520.4,308.0 V268.7 Q520.4,264.7 524.4,264.7 H546.4 Q550.4,264.7 550.4,268.7 V308.0 Z" fill="#eb6834"/><text x="535.4" y="258.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.76</text></g>
+Private operation (B1) 1.12 · Private employment (B2) 0.58 · Real estate (B3) 0.57</title><path d="M498.0,308.0 V271.1 Q498.0,267.1 502.0,267.1 H524.0 Q528.0,267.1 528.0,271.1 V308.0 Z" fill="#b8862a"/><text x="513.0" y="261.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.76</text></g>
 <g class="mkt-bar"><title>2011–2015 — Financial development: 0.165
-Informal finance (C1) 0.29 · Formal banking (C2) 0.04</title><path d="M552.4,308.0 V302.6 Q552.4,298.6 556.4,298.6 H578.4 Q582.4,298.6 582.4,302.6 V308.0 Z" fill="#1baf7a"/><text x="567.4" y="292.6" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.17</text></g>
-<text x="535.4" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2011–2015</text>
+Informal finance (C1) 0.29 · Formal banking (C2) 0.04</title><path d="M530.0,308.0 V303.1 Q530.0,299.1 534.0,299.1 H556.0 Q560.0,299.1 560.0,303.1 V308.0 Z" fill="#94518c"/><text x="545.0" y="293.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.17</text></g>
+<text x="513.0" y="328" text-anchor="middle" font-size="13" fill="#1c1c1c">2011–2015</text>
 <g class="mkt-bar"><title>2016–2020 — Price liberalization: 2.910
-Enterprise (A1) 1.18 · Household (A2) 4.64</title><path d="M628.8,308.0 V145.5 Q628.8,141.5 632.8,141.5 H654.8 Q658.8,141.5 658.8,145.5 V308.0 Z" fill="#2a78d6"/><text x="643.8" y="135.5" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.91</text></g>
+Enterprise (A1) 1.18 · Household (A2) 4.64</title><path d="M600.0,308.0 V154.9 Q600.0,150.9 604.0,150.9 H626.0 Q630.0,150.9 630.0,154.9 V308.0 Z" fill="#34689c"/><text x="615.0" y="144.9" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.91</text></g>
 <g class="mkt-bar"><title>2016–2020 — Privatization: 1.093
-Private operation (B1) 1.59 · Private employment (B2) 0.80 · Real estate (B3) 0.90</title><path d="M660.8,308.0 V249.5 Q660.8,245.5 664.8,245.5 H686.8 Q690.8,245.5 690.8,249.5 V308.0 Z" fill="#eb6834"/><text x="675.8" y="239.5" text-anchor="middle" font-size="10.5" fill="#6b6b6b">1.09</text></g>
+Private operation (B1) 1.59 · Private employment (B2) 0.80 · Real estate (B3) 0.90</title><path d="M632.0,308.0 V253.0 Q632.0,249.0 636.0,249.0 H658.0 Q662.0,249.0 662.0,253.0 V308.0 Z" fill="#b8862a"/><text x="647.0" y="243.0" text-anchor="middle" font-size="11.5" fill="#6b6b6b">1.09</text></g>
 <g class="mkt-bar"><title>2016–2020 — Financial development: 0.283
-Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M692.8,308.0 V295.8 Q692.8,291.8 696.8,291.8 H718.8 Q722.8,291.8 722.8,295.8 V308.0 Z" fill="#1baf7a"/><text x="707.8" y="285.8" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.28</text></g>
-<text x="675.8" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2016–2020</text>
-<rect x="44" y="348" width="10" height="10" rx="2" fill="#2a78d6"/>
-<text x="59" y="357" font-size="12" fill="#6b6b6b">Price liberalization</text>
-<rect x="215.0" y="348" width="10" height="10" rx="2" fill="#eb6834"/>
-<text x="230.0" y="357" font-size="12" fill="#6b6b6b">Privatization</text>
-<rect x="339.8" y="348" width="10" height="10" rx="2" fill="#1baf7a"/>
-<text x="354.8" y="357" font-size="12" fill="#6b6b6b">Financial development</text>
-<text x="35" y="14" text-anchor="end" font-size="11" fill="#6b6b6b">score</text>
+Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M664.0,308.0 V296.7 Q664.0,292.7 668.0,292.7 H690.0 Q694.0,292.7 694.0,296.7 V308.0 Z" fill="#94518c"/><text x="679.0" y="286.7" text-anchor="middle" font-size="11.5" fill="#6b6b6b">0.28</text></g>
+<text x="647.0" y="328" text-anchor="middle" font-size="13" fill="#1c1c1c">2016–2020</text>
+<rect x="44" y="348" width="10" height="10" rx="2" fill="#34689c"/>
+<text x="59" y="357" font-size="13" fill="#6b6b6b">Price liberalization</text>
+<rect x="227.0" y="348" width="10" height="10" rx="2" fill="#b8862a"/>
+<text x="242.0" y="357" font-size="13" fill="#6b6b6b">Privatization</text>
+<rect x="360.3" y="348" width="10" height="10" rx="2" fill="#94518c"/>
+<text x="375.3" y="357" font-size="13" fill="#6b6b6b">Financial development</text>
+<text x="35" y="16" text-anchor="end" font-size="11.5" fill="#6b6b6b">score</text>
+<text x="726" y="16" font-size="11" fill="#8b8981">what the score means</text>
 </svg>
   </div>
   <p class="figure-caption">
-    Scores run from 1 (classical central planning) to 5 (a functioning market economy). Bars, not
-    lines: each period is a different group of respondents, so nothing is interpolated between them.
-    Hover a bar for the sub-scores behind it.
+    Bars, not lines: each period is a different group of respondents, so nothing is interpolated
+    between them. Hover a bar for the sub-scores behind it.
   </p>
 
   <details>
@@ -215,6 +219,31 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M692.8,30
       </table>
     </div>
   </details>
+
+  <h3>Reading the scale</h3>
+  <p>
+    The scale is not a percentage. It is calibrated against the reform histories of the Soviet Union
+    and China, so that a score can be read as &ldquo;about as far as country X had got by year Y.&rdquo;
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Score</th><th>Roughly equivalent to</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>A classical planned economy &mdash; administered prices, no private ownership, a single state bank</td></tr>
+        <tr><td><strong>2</strong></td><td>The Soviet Kosygin reform of 1965, or China at the start of reform in 1978</td></tr>
+        <tr><td><strong>3&ndash;4</strong></td><td>Perestroika, or China in the second stage of its reforms</td></tr>
+        <tr><td><strong>5</strong></td><td>Transition substantially complete &mdash; prices set by markets, private ownership normal, a real banking system</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    That is what makes the levels below striking. Privatization reaches 1.09 by 2016&ndash;2020 and
+    financial development 0.28: on this scale North Korea has not yet arrived where the Soviet Union
+    was in 1965 or China in 1978. Only price liberalization, at 2.9, sits in reform territory. The
+    economy has marketized from below without the institutions of a market economy following.
+  </p>
 
   <h2>What the index shows</h2>
   <p>
@@ -312,10 +341,6 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M692.8,30
   </p>
 
   <h2>How this differs from the 2022 paper</h2>
-  <p>
-    The two indices measure the same concepts from different surveys, and they do not agree
-    everywhere. The differences are worth stating plainly.
-  </p>
   <div class="table-scroll">
     <table class="data-table">
       <thead>
@@ -331,17 +356,9 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M692.8,30
     </table>
   </div>
   <p>
-    The substitution in A2 is forced: the Ministry of Unification survey has no price-control
-    question. It also matters. In the published index, price liberalization <em>falls</em> between
-    2001&ndash;2005 and 2006&ndash;2010, which the paper reads as the marketization crackdown of the
-    late Kim Jong Il years. On the public data it <em>rises</em> over the same span. Both can be
-    right: fewer people reported market purchases being blocked even while more of their purchases
-    happened at market prices. What it shows is that this dimension is sensitive to how household
-    price liberalization is measured, which is a caution for anyone using either number.
-  </p>
-  <p style="font-size:0.85rem; color:var(--text-muted);">
-    For the same reason the two series should not be spliced into one. Where they overlap they differ
-    by dimension-specific amounts and, in the case of price liberalization, in direction.
+    The A2 substitution is forced &mdash; the Ministry of Unification survey has no price-control
+    question &mdash; and it matters: price liberalization <em>falls</em> across 2006&ndash;2010 in the
+    published index but <em>rises</em> here. The two series should not be spliced.
   </p>
 
   <h2>Citation</h2>
