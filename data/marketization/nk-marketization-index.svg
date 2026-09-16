@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 900 384" role="img" xmlns="http://www.w3.org/2000/svg" width="900" height="384" style="background:#fff" aria-label="North Korean marketization by dimension across five periods, on a one-to-five transition scale where 2 is the 1965 Kosygin reform and 5 is a substantially completed transition">
+<svg viewBox="0 0 840 384" role="img" xmlns="http://www.w3.org/2000/svg" width="840" height="384" style="background:#fff" aria-label="North Korean marketization by dimension across five periods. Scores are shares of respondents rescaled to a nought-to-five scale, so 5 would mean every respondent reported the behaviour.">
 <title>North Korean marketization index, 1990s–2020, by dimension</title>
 <line x1="44" y1="308.0" x2="714" y2="308.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="312.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">0</text>
+<text x="726" y="312.0" font-size="11.5" fill="#8b8981">0%</text>
 <line x1="44" y1="254.0" x2="714" y2="254.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="258.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">1</text>
-<text x="726" y="257.5" font-size="11.5" fill="#8b8981">classical planned economy</text>
+<text x="726" y="258.0" font-size="11.5" fill="#8b8981">20%</text>
 <line x1="44" y1="200.0" x2="714" y2="200.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="204.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">2</text>
-<text x="726" y="203.5" font-size="11.5" fill="#8b8981">Kosygin 1965 · China 1978</text>
+<text x="726" y="204.0" font-size="11.5" fill="#8b8981">40%</text>
 <line x1="44" y1="146.0" x2="714" y2="146.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="150.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">3</text>
-<text x="726" y="149.5" font-size="11.5" fill="#8b8981">perestroika · China 1980s</text>
+<text x="726" y="150.0" font-size="11.5" fill="#8b8981">60%</text>
 <line x1="44" y1="92.0" x2="714" y2="92.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="96.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">4</text>
+<text x="726" y="96.0" font-size="11.5" fill="#8b8981">80%</text>
 <line x1="44" y1="38.0" x2="714" y2="38.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="42.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">5</text>
-<text x="726" y="41.5" font-size="11.5" fill="#8b8981">transition substantially done</text>
+<text x="726" y="42.0" font-size="11.5" fill="#8b8981">100% — everyone</text>
 <line x1="44" y1="308" x2="714" y2="308" stroke="#c3c2b7" stroke-width="1"/>
 <g class="mkt-bar"><title>Before 2000 — Price liberalization: 2.111
 Enterprise (A1) 0.56 · Household (A2) 3.67</title><path d="M64.0,308.0 V198.0 Q64.0,194.0 68.0,194.0 H90.0 Q94.0,194.0 94.0,198.0 V308.0 Z" fill="#34689c"/><text x="79.0" y="188.0" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.11</text></g>
@@ -60,5 +62,5 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M664.0,30
 <rect x="360.3" y="348" width="10" height="10" rx="2" fill="#94518c"/>
 <text x="375.3" y="357" font-size="13" fill="#6b6b6b">Financial development</text>
 <text x="35" y="16" text-anchor="end" font-size="11.5" fill="#6b6b6b">score</text>
-<text x="726" y="16" font-size="11" fill="#8b8981">what the score means</text>
+<text x="726" y="16" font-size="11" fill="#8b8981">share of respondents</text>
 </svg>

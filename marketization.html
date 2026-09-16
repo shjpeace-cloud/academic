@@ -57,9 +57,9 @@
   </script>
 
   <style>
-    /* Below ~720px the value labels would scale under 9px, so the figure
+    /* Below ~680px the value labels would scale under 9px, so the figure
        scrolls sideways rather than shrinking past legibility. */
-    .mkt-chart { width: 100%; min-width: 720px; height: auto; display: block; }
+    .mkt-chart { width: 100%; min-width: 680px; height: auto; display: block; }
     .mkt-bar path { transition: opacity .12s ease; }
     .mkt-bar:hover path { opacity: .78; }
     .mkt-figure { background: var(--surface); border: 1px solid var(--border);
@@ -116,24 +116,26 @@
   <h2>The index</h2>
 
   <div class="mkt-figure">
-<svg viewBox="0 0 900 384" role="img" class="mkt-chart" aria-label="North Korean marketization by dimension across five periods, on a one-to-five transition scale where 2 is the 1965 Kosygin reform and 5 is a substantially completed transition">
+<svg viewBox="0 0 840 384" role="img" class="mkt-chart" aria-label="North Korean marketization by dimension across five periods. Scores are shares of respondents rescaled to a nought-to-five scale, so 5 would mean every respondent reported the behaviour.">
 <title>North Korean marketization index, 1990s–2020, by dimension</title>
 <line x1="44" y1="308.0" x2="714" y2="308.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="312.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">0</text>
+<text x="726" y="312.0" font-size="11.5" fill="#8b8981">0%</text>
 <line x1="44" y1="254.0" x2="714" y2="254.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="258.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">1</text>
-<text x="726" y="257.5" font-size="11.5" fill="#8b8981">classical planned economy</text>
+<text x="726" y="258.0" font-size="11.5" fill="#8b8981">20%</text>
 <line x1="44" y1="200.0" x2="714" y2="200.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="204.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">2</text>
-<text x="726" y="203.5" font-size="11.5" fill="#8b8981">Kosygin 1965 · China 1978</text>
+<text x="726" y="204.0" font-size="11.5" fill="#8b8981">40%</text>
 <line x1="44" y1="146.0" x2="714" y2="146.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="150.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">3</text>
-<text x="726" y="149.5" font-size="11.5" fill="#8b8981">perestroika · China 1980s</text>
+<text x="726" y="150.0" font-size="11.5" fill="#8b8981">60%</text>
 <line x1="44" y1="92.0" x2="714" y2="92.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="96.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">4</text>
+<text x="726" y="96.0" font-size="11.5" fill="#8b8981">80%</text>
 <line x1="44" y1="38.0" x2="714" y2="38.0" stroke="#e6e4dc" stroke-width="1"/>
 <text x="35" y="42.0" text-anchor="end" font-size="12.5" fill="#6b6b6b">5</text>
-<text x="726" y="41.5" font-size="11.5" fill="#8b8981">transition substantially done</text>
+<text x="726" y="42.0" font-size="11.5" fill="#8b8981">100% — everyone</text>
 <line x1="44" y1="308" x2="714" y2="308" stroke="#c3c2b7" stroke-width="1"/>
 <g class="mkt-bar"><title>Before 2000 — Price liberalization: 2.111
 Enterprise (A1) 0.56 · Household (A2) 3.67</title><path d="M64.0,308.0 V198.0 Q64.0,194.0 68.0,194.0 H90.0 Q94.0,194.0 94.0,198.0 V308.0 Z" fill="#34689c"/><text x="79.0" y="188.0" text-anchor="middle" font-size="11.5" fill="#6b6b6b">2.11</text></g>
@@ -177,7 +179,7 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M664.0,30
 <rect x="360.3" y="348" width="10" height="10" rx="2" fill="#94518c"/>
 <text x="375.3" y="357" font-size="13" fill="#6b6b6b">Financial development</text>
 <text x="35" y="16" text-anchor="end" font-size="11.5" fill="#6b6b6b">score</text>
-<text x="726" y="16" font-size="11" fill="#8b8981">what the score means</text>
+<text x="726" y="16" font-size="11" fill="#8b8981">share of respondents</text>
 </svg>
   </div>
   <p class="figure-caption">
@@ -220,36 +222,49 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M664.0,30
     </div>
   </details>
 
-  <h3>Reading the scale</h3>
+  <h3>Reading the score</h3>
   <p>
-    The scale is not a percentage. It is calibrated against the reform histories of the Soviet Union
-    and China, so that a score can be read as &ldquo;about as far as country X had got by year Y.&rdquo;
+    The score is a rescaled percentage and nothing more. Each indicator is the share of respondents
+    who report some market behaviour &mdash; buying inputs at market prices, hiring someone privately,
+    selling a home &mdash; and that share goes onto the scale as
+    <code>5 &times; percent / 100</code>. So multiply by 20 to read it back as a percentage: a 5 would
+    mean every respondent reported it, and 1 means one in five did.
   </p>
   <div class="table-scroll">
     <table class="data-table">
       <thead>
-        <tr><th>Score</th><th>Roughly equivalent to</th></tr>
+        <tr><th>Score</th><th>Share of respondents</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>1</strong></td><td>A classical planned economy &mdash; administered prices, no private ownership, a single state bank</td></tr>
-        <tr><td><strong>2</strong></td><td>The Soviet Kosygin reform of 1965, or China at the start of reform in 1978</td></tr>
-        <tr><td><strong>3&ndash;4</strong></td><td>Perestroika, or China in the second stage of its reforms</td></tr>
-        <tr><td><strong>5</strong></td><td>Transition substantially complete &mdash; prices set by markets, private ownership normal, a real banking system</td></tr>
+        <tr><td><strong>1</strong></td><td>20%</td></tr>
+        <tr><td><strong>2</strong></td><td>40%</td></tr>
+        <tr><td><strong>3</strong></td><td>60%</td></tr>
+        <tr><td><strong>4</strong></td><td>80%</td></tr>
+        <tr><td><strong>5</strong></td><td>100% &mdash; everyone reports it</td></tr>
       </tbody>
     </table>
   </div>
   <p>
-    That is what makes the levels below striking. Privatization reaches 1.09 by 2016&ndash;2020 and
-    financial development 0.28: on this scale North Korea has not yet arrived where the Soviet Union
-    was in 1965 or China in 1978. Only price liberalization, at 2.9, sits in reform territory. The
-    economy has marketized from below without the institutions of a market economy following.
+    Read that way, price liberalization at 2.91 in 2016&ndash;2020 says that across its two sub-areas
+    about 58% of respondents describe market pricing; privatization at 1.09 says 22%; financial
+    development at 0.28 says under 6%. The scale has no built-in judgement about how much
+    marketization is &ldquo;a lot&rdquo; &mdash; it only reports how widespread each behaviour was.
+  </p>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    The 2022 paper carries a second index alongside this one, scored by five specialists against the
+    reform histories of the Soviet Union and China &mdash; there a 2 means the 1965 Kosygin reform or
+    China in 1978, and 3&ndash;4 means perestroika. That index needs a fresh expert panel and cannot be
+    rebuilt from published figures, so it is not reproduced here. Its scores are not comparable with
+    the survey scores on this page, even though both run 1 to 5.
   </p>
 
   <h2>What the index shows</h2>
   <p>
     The ordering is the same one the 2022 paper found: price liberalization is furthest along,
     privatization follows, finance trails badly. That it reappears in a different survey is
-    reassurance that the ordering is a feature of the economy and not of one questionnaire.
+    reassurance that the ordering is a feature of the economy and not of one questionnaire. The gap
+    between them is wide &mdash; by 2016&ndash;2020 market pricing is something most respondents
+    describe, while private ownership is a minority experience and formal banking is almost nobody's.
   </p>
   <p>
     The movement is in privatization. It rises without pause across all five periods, and fastest in
