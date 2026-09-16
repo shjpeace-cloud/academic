@@ -54,7 +54,7 @@ worklog와 별개다: worklog는 날짜별 기록, notes.md는 그 논문의 현
 academic/
 ├── index.html              ← Home (hero, About 문단, Featured GPRNK 그림, Recent News)
 ├── research.html           ← Research (4-card grid + Current Projects 자동 렌더)
-├── publications.html       ← Publications (JSON 기반 자동 렌더 + 8개 type 필터)
+├── publications.html       ← Publications (정적 fallback 56건 + JS 필터, 9개 type)
 ├── gprnk.html              ← Data (GPRNK 지수 공개 페이지 — 차트·다운로드·인용)
 ├── teaching.html           ← Teaching (강의 소개)
 ├── cv.html                 ← CV (학력, 경력, Selected Publications)
@@ -78,7 +78,9 @@ academic/
 │
 └── .claude/
     ├── settings.json        ← Stop hook (auto-push) — repo에 commit
-    ├── gprnk-workspace/     ← GPRNK 릴리스 워크스페이스 (README + build_gprnk.py)
+    ├── gprnk-workspace/     ← GPRNK 릴리스 워크스페이스 (README + build_gprnk.py + rebuild_gprnk.py)
+    ├── tools/
+    │   └── build_publications.py  ← publications.json → publications.html 정적 fallback 생성
     ├── settings.local.json  ← 개인 권한 (gitignored)
     ├── auto-push.sh         ← auto-commit/push 스크립트
     ├── worklog/             ← 작업 일지 (gitignored, OneDrive 동기화로만 보존)
@@ -275,7 +277,10 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 2. `index.html` Recent News 최상단에 `<div class="news-item">` 추가, 가장 오래된 1-2건 제거
 3. EAI 한·영 페어면 두 entry로 분리 (`commentary-en` + `commentary-kr`/journal=`동아시아연구원`)
 4. type이 신규(예: `commentary-kr` 신설)면 `publications.html` SECTION_LABELS / SECTION_ORDER / filter button 등록
-5. 즉시 commit + push
+   — **`.claude/tools/build_publications.py`의 같은 상수 2개도 함께** (JS와 생성기가 쌍으로 움직인다)
+5. **`python .claude/tools/build_publications.py` 실행** ← 필수. 안 돌리면 JSON에는 있고
+   정적 HTML에는 없어 크롤러에 안 보인다. `--check`로 stale 여부만 확인 가능
+6. 즉시 commit + push
 
 ### 4. 새 current project 추가 시
 
