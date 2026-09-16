@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Korean Marketization Index — Seungho Jung (정승호) | Incheon National University</title>
+  <meta name="description" content="A marketization index for North Korea covering price liberalization, privatization and financial development across five periods from the 1990s to 2020, rebuilt entirely from published Ministry of Unification survey figures so that it can be reproduced. Method from Jung, Yang and Kim (2022), Asian Perspective.">
+  <meta name="keywords" content="North Korea marketization index, 북한 시장화 지수, price liberalization, privatization, financial development, transition index, defector survey, 북한이탈주민, Seungho Jung, 정승호, data download">
+  <meta name="author" content="Seungho Jung">
+  <link rel="canonical" href="https://shjpeace-cloud.github.io/academic/marketization.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="North Korean Marketization Index — Seungho Jung (정승호)">
+  <meta property="og:description" content="Price liberalization, privatization and financial development in North Korea, five periods to 2020, rebuilt from public data so it can be reproduced. Free download (CSV).">
+  <meta property="og:url" content="https://shjpeace-cloud.github.io/academic/marketization.html">
+  <meta property="og:site_name" content="Seungho Jung — Academic Website">
+  <meta property="og:image" content="https://shjpeace-cloud.github.io/academic/data/marketization/nk-marketization-index.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="North Korean Marketization Index">
+  <meta name="twitter:description" content="Price liberalization, privatization and financial development in North Korea, five periods to 2020. Built from public data. Free download (CSV).">
+  <meta name="twitter:image" content="https://shjpeace-cloud.github.io/academic/data/marketization/nk-marketization-index.svg">
+
+  <link rel="stylesheet" href="style.css?v=20260916a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "North Korean Marketization Index (five periods, 1990s–2020)",
+    "alternateName": "북한 시장화 지수",
+    "description": "An index of North Korean marketization in three dimensions — price liberalization, privatization and financial development — scored on a five-point scale for five periods from before 2000 to 2016–2020. It applies the method of Jung, Yang and Kim (2022) to the published survey figures of the Ministry of Unification's report on economic and social conditions in North Korea, a survey of 6,351 defectors, so that the index can be reproduced from public sources.",
+    "url": "https://shjpeace-cloud.github.io/academic/marketization.html",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isAccessibleForFree": true,
+    "keywords": ["marketization", "North Korea", "economic transition", "price liberalization", "privatization", "informal finance", "defector survey"],
+    "temporalCoverage": "1990/2020",
+    "spatialCoverage": "North Korea",
+    "creator": [
+      { "@type": "Person", "name": "Seungho Jung", "url": "https://orcid.org/0000-0001-7699-3158" }
+    ],
+    "isBasedOn": "Ministry of Unification (2024), 북한 경제·사회 실태 인식보고서",
+    "citation": "Jung, Seungho, Moon-Soo Yang, and Byung-Yeon Kim (2022). Measuring North Korean Marketization: An Index Approach. Asian Perspective 46(2), 195–223. https://doi.org/10.1353/apr.2022.0009",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://shjpeace-cloud.github.io/academic/data/marketization/NK_marketization_index.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://shjpeace-cloud.github.io/academic/data/marketization/NK_marketization_indicators.csv"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Below ~620px the value labels would scale under 9px, so the figure
+       scrolls sideways rather than shrinking past legibility. */
+    .mkt-chart { width: 100%; min-width: 620px; height: auto; display: block; }
+    .mkt-bar path { transition: opacity .12s ease; }
+    .mkt-bar:hover path { opacity: .78; }
+    .mkt-figure { background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.9rem 0.6rem 0.4rem; margin: 1rem 0 0.4rem;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    main h3 { margin-top: 2rem; }
+    main details { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Seungho Jung</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="data.html" class="active">Data</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <p style="font-size:0.85rem; margin-bottom:0.4rem;">
+    <a href="data.html" style="color:var(--text-muted);">&larr; Data</a>
+  </p>
+  <h1>North Korean Marketization Index</h1>
+  <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+    How far North Korea&rsquo;s economy has moved toward the market in three dimensions, scored on a
+    five-point scale for five periods up to 2020. Built entirely from published figures, so anyone
+    can rebuild it.
+  </p>
+
+  <p>
+    Marketization in North Korea is uneven: prices escaped state control long before ownership did,
+    and finance has barely moved at all. This index separates those dimensions rather than averaging
+    them away. It follows the method of
+    <a href="https://doi.org/10.1353/apr.2022.0009" target="_blank">Jung, Yang and Kim (2022)</a>,
+    which scored three periods from a survey of 842 defectors, and applies it to the much larger
+    survey published by the Ministry of Unification in 2024 &mdash; 6,351 defectors, grouped by the
+    year they left. That gives five periods instead of three, and one more of them falls after Kim
+    Jong Un came to power.
+  </p>
+  <p>
+    The point of rebuilding it is reproducibility. The 2022 index rests on survey microdata that has
+    never been released, so no one outside the project can check or extend it. Every number below
+    comes from a figure in a public report. The series is therefore <em>not</em> a continuation of the
+    published index &mdash; it is a separate one, and the two should not be joined end to end.
+  </p>
+
+  <h2>The index</h2>
+
+  <div class="mkt-figure">
+<svg viewBox="0 0 760 384" role="img" class="mkt-chart" aria-label="North Korean marketization index by dimension, five periods, on a five-point scale">
+<title>North Korean marketization index, 1990s–2020, by dimension</title>
+<line x1="44" y1="308.0" x2="746" y2="308.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="312.0" text-anchor="end" font-size="11.5" fill="#6b6b6b">0</text>
+<line x1="44" y1="250.8" x2="746" y2="250.8" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="254.8" text-anchor="end" font-size="11.5" fill="#6b6b6b">1</text>
+<line x1="44" y1="193.6" x2="746" y2="193.6" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="197.6" text-anchor="end" font-size="11.5" fill="#6b6b6b">2</text>
+<line x1="44" y1="136.4" x2="746" y2="136.4" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="140.4" text-anchor="end" font-size="11.5" fill="#6b6b6b">3</text>
+<line x1="44" y1="79.2" x2="746" y2="79.2" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="83.2" text-anchor="end" font-size="11.5" fill="#6b6b6b">4</text>
+<line x1="44" y1="22.0" x2="746" y2="22.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="35" y="26.0" text-anchor="end" font-size="11.5" fill="#6b6b6b">5</text>
+<line x1="44" y1="308" x2="746" y2="308" stroke="#c3c2b7" stroke-width="1"/>
+<g class="mkt-bar"><title>Before 2000 — Price liberalization: 2.111
+Enterprise (A1) 0.56 · Household (A2) 3.67</title><path d="M67.2,308.0 V191.3 Q67.2,187.3 71.2,187.3 H93.2 Q97.2,187.3 97.2,191.3 V308.0 Z" fill="#2a78d6"/><text x="82.2" y="181.3" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.11</text></g>
+<g class="mkt-bar"><title>Before 2000 — Privatization: 0.193
+Private operation (B1) 0.30 · Private employment (B2) 0.14 · Real estate (B3) 0.14</title><path d="M99.2,308.0 V301.0 Q99.2,297.0 103.2,297.0 H125.2 Q129.2,297.0 129.2,301.0 V308.0 Z" fill="#eb6834"/><text x="114.2" y="291.0" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.19</text></g>
+<g class="mkt-bar"><title>Before 2000 — Financial development: 0.208
+Informal finance (C1) 0.13 · Formal banking (C2) 0.28</title><path d="M131.2,308.0 V300.1 Q131.2,296.1 135.2,296.1 H157.2 Q161.2,296.1 161.2,300.1 V308.0 Z" fill="#1baf7a"/><text x="146.2" y="290.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.21</text></g>
+<text x="114.2" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">Before 2000</text>
+<g class="mkt-bar"><title>2001–2005 — Price liberalization: 2.534
+Enterprise (A1) 0.78 · Household (A2) 4.29</title><path d="M207.6,308.0 V167.1 Q207.6,163.1 211.6,163.1 H233.6 Q237.6,163.1 237.6,167.1 V308.0 Z" fill="#2a78d6"/><text x="222.6" y="157.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.53</text></g>
+<g class="mkt-bar"><title>2001–2005 — Privatization: 0.274
+Private operation (B1) 0.40 · Private employment (B2) 0.20 · Real estate (B3) 0.22</title><path d="M239.6,308.0 V296.3 Q239.6,292.3 243.6,292.3 H265.6 Q269.6,292.3 269.6,296.3 V308.0 Z" fill="#eb6834"/><text x="254.6" y="286.3" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.27</text></g>
+<g class="mkt-bar"><title>2001–2005 — Financial development: 0.122
+Informal finance (C1) 0.15 · Formal banking (C2) 0.09</title><path d="M271.6,308.0 V304.5 Q271.6,301.0 275.1,301.0 H298.1 Q301.6,301.0 301.6,304.5 V308.0 Z" fill="#1baf7a"/><text x="286.6" y="295.0" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.12</text></g>
+<text x="254.6" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2001–2005</text>
+<g class="mkt-bar"><title>2006–2010 — Price liberalization: 2.855
+Enterprise (A1) 1.17 · Household (A2) 4.54</title><path d="M348.0,308.0 V148.7 Q348.0,144.7 352.0,144.7 H374.0 Q378.0,144.7 378.0,148.7 V308.0 Z" fill="#2a78d6"/><text x="363.0" y="138.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.85</text></g>
+<g class="mkt-bar"><title>2006–2010 — Privatization: 0.440
+Private operation (B1) 0.67 · Private employment (B2) 0.31 · Real estate (B3) 0.34</title><path d="M380.0,308.0 V286.8 Q380.0,282.8 384.0,282.8 H406.0 Q410.0,282.8 410.0,286.8 V308.0 Z" fill="#eb6834"/><text x="395.0" y="276.8" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.44</text></g>
+<g class="mkt-bar"><title>2006–2010 — Financial development: 0.163
+Informal finance (C1) 0.26 · Formal banking (C2) 0.07</title><path d="M412.0,308.0 V302.7 Q412.0,298.7 416.0,298.7 H438.0 Q442.0,298.7 442.0,302.7 V308.0 Z" fill="#1baf7a"/><text x="427.0" y="292.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.16</text></g>
+<text x="395.0" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2006–2010</text>
+<g class="mkt-bar"><title>2011–2015 — Price liberalization: 2.831
+Enterprise (A1) 0.97 · Household (A2) 4.70</title><path d="M488.4,308.0 V150.1 Q488.4,146.1 492.4,146.1 H514.4 Q518.4,146.1 518.4,150.1 V308.0 Z" fill="#2a78d6"/><text x="503.4" y="140.1" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.83</text></g>
+<g class="mkt-bar"><title>2011–2015 — Privatization: 0.757
+Private operation (B1) 1.12 · Private employment (B2) 0.58 · Real estate (B3) 0.57</title><path d="M520.4,308.0 V268.7 Q520.4,264.7 524.4,264.7 H546.4 Q550.4,264.7 550.4,268.7 V308.0 Z" fill="#eb6834"/><text x="535.4" y="258.7" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.76</text></g>
+<g class="mkt-bar"><title>2011–2015 — Financial development: 0.165
+Informal finance (C1) 0.29 · Formal banking (C2) 0.04</title><path d="M552.4,308.0 V302.6 Q552.4,298.6 556.4,298.6 H578.4 Q582.4,298.6 582.4,302.6 V308.0 Z" fill="#1baf7a"/><text x="567.4" y="292.6" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.17</text></g>
+<text x="535.4" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2011–2015</text>
+<g class="mkt-bar"><title>2016–2020 — Price liberalization: 2.910
+Enterprise (A1) 1.18 · Household (A2) 4.64</title><path d="M628.8,308.0 V145.5 Q628.8,141.5 632.8,141.5 H654.8 Q658.8,141.5 658.8,145.5 V308.0 Z" fill="#2a78d6"/><text x="643.8" y="135.5" text-anchor="middle" font-size="10.5" fill="#6b6b6b">2.91</text></g>
+<g class="mkt-bar"><title>2016–2020 — Privatization: 1.093
+Private operation (B1) 1.59 · Private employment (B2) 0.80 · Real estate (B3) 0.90</title><path d="M660.8,308.0 V249.5 Q660.8,245.5 664.8,245.5 H686.8 Q690.8,245.5 690.8,249.5 V308.0 Z" fill="#eb6834"/><text x="675.8" y="239.5" text-anchor="middle" font-size="10.5" fill="#6b6b6b">1.09</text></g>
+<g class="mkt-bar"><title>2016–2020 — Financial development: 0.283
+Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><path d="M692.8,308.0 V295.8 Q692.8,291.8 696.8,291.8 H718.8 Q722.8,291.8 722.8,295.8 V308.0 Z" fill="#1baf7a"/><text x="707.8" y="285.8" text-anchor="middle" font-size="10.5" fill="#6b6b6b">0.28</text></g>
+<text x="675.8" y="328" text-anchor="middle" font-size="12" fill="#1c1c1c">2016–2020</text>
+<rect x="44" y="348" width="10" height="10" rx="2" fill="#2a78d6"/>
+<text x="59" y="357" font-size="12" fill="#6b6b6b">Price liberalization</text>
+<rect x="215.0" y="348" width="10" height="10" rx="2" fill="#eb6834"/>
+<text x="230.0" y="357" font-size="12" fill="#6b6b6b">Privatization</text>
+<rect x="339.8" y="348" width="10" height="10" rx="2" fill="#1baf7a"/>
+<text x="354.8" y="357" font-size="12" fill="#6b6b6b">Financial development</text>
+<text x="35" y="14" text-anchor="end" font-size="11" fill="#6b6b6b">score</text>
+</svg>
+  </div>
+  <p class="figure-caption">
+    Scores run from 1 (classical central planning) to 5 (a functioning market economy). Bars, not
+    lines: each period is a different group of respondents, so nothing is interpolated between them.
+    Hover a bar for the sub-scores behind it.
+  </p>
+
+  <details>
+    <summary>Show the data as a table</summary>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr><th>Period</th><th>Price liberalization</th><th>Privatization</th><th>Financial development</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>Before 2000</td><td>2.111</td><td>0.193</td><td>0.208</td></tr>
+        <tr><td>2001–2005</td><td>2.534</td><td>0.274</td><td>0.122</td></tr>
+        <tr><td>2006–2010</td><td>2.855</td><td>0.440</td><td>0.163</td></tr>
+        <tr><td>2011–2015</td><td>2.831</td><td>0.757</td><td>0.165</td></tr>
+        <tr><td>2016–2020</td><td>2.910</td><td>1.093</td><td>0.283</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">Sub-area scores, same five-point scale:</p>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr><th>Sub-area</th><th>What it measures</th><th>&lt;2000</th><th>01–05</th><th>06–10</th><th>11–15</th><th>16–20</th></tr>
+        </thead>
+        <tbody>
+        <tr><td><code>A1</code></td><td>Enterprise — output and inputs traded at market prices</td><td>0.557</td><td>0.777</td><td>1.170</td><td>0.968</td><td>1.180</td></tr>
+        <tr><td><code>A2</code></td><td>Household — consumer goods bought at market prices</td><td>3.665</td><td>4.290</td><td>4.540</td><td>4.695</td><td>4.640</td></tr>
+        <tr><td><code>B1</code></td><td>Share of state units in de facto private hands</td><td>0.300</td><td>0.396</td><td>0.666</td><td>1.119</td><td>1.587</td></tr>
+        <tr><td><code>B2</code></td><td>Private employment (hiring and being hired)</td><td>0.142</td><td>0.205</td><td>0.312</td><td>0.585</td><td>0.797</td></tr>
+        <tr><td><code>B3</code></td><td>Housing bought and sold</td><td>0.138</td><td>0.220</td><td>0.340</td><td>0.568</td><td>0.895</td></tr>
+        <tr><td><code>C1</code></td><td>Borrowing from non-kin lenders</td><td>0.130</td><td>0.154</td><td>0.255</td><td>0.291</td><td>0.422</td></tr>
+        <tr><td><code>C2</code></td><td>Savings held in a bank</td><td>0.285</td><td>0.090</td><td>0.070</td><td>0.040</td><td>0.145</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2>What the index shows</h2>
+  <p>
+    The ordering is the same one the 2022 paper found: price liberalization is furthest along,
+    privatization follows, finance trails badly. That it reappears in a different survey is
+    reassurance that the ordering is a feature of the economy and not of one questionnaire.
+  </p>
+  <p>
+    The movement is in privatization. It rises without pause across all five periods, and fastest in
+    the last one &mdash; 0.76 to 1.09 between 2011&ndash;2015 and 2016&ndash;2020, the years of the
+    heaviest sanctions. Whatever those sanctions did, they did not slow the transfer of state assets
+    into private hands. Price liberalization, by contrast, flattens out near 2.9. Finance stays close
+    to the floor throughout: the share of people keeping savings in a bank actually falls from 5.7% to
+    0.8% before recovering slightly, so what growth there is comes entirely from private lending.
+  </p>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    A caution about the top line: the household half of price liberalization (A2) sits above 90% by
+    2011 and cannot rise much further, so it stops discriminating between periods and holds the
+    dimension up. The same saturation affects the 2022 index, which had the same two-part structure.
+  </p>
+
+  <h2>Download</h2>
+  <div class="dl-row">
+    <a class="dl-btn" href="data/marketization/NK_marketization_index.csv" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Index (CSV)
+    </a>
+    <a class="dl-btn secondary" href="data/marketization/NK_marketization_indicators.csv" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Underlying indicators (CSV)
+    </a>
+    <a class="dl-btn secondary" href="data/marketization/nk-marketization-index.svg" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Figure (SVG)
+    </a>
+  </div>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    The index file carries the three dimension scores and the seven sub-area scores for each period.
+    The indicators file carries the thirteen underlying percentages, so you can rebuild the index or
+    rebuild it differently.
+  </p>
+
+  <h2>How the index is built</h2>
+  <p>
+    Thirteen survey percentages feed seven sub-areas, which feed three dimensions. At each step the
+    aggregation is an unweighted mean, and percentages are put on the five-point scale as
+    <code>5 &times; percent / 100</code>. Nothing is weighted. The 2022 paper argues that assigning
+    weights without data to justify them would introduce as much error as it removes, and that
+    reasoning carries over unchanged.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Dimension</th><th>Sub-areas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Price liberalization (A)</td><td>A1 enterprise · A2 household</td></tr>
+        <tr><td>Privatization (B)</td><td>B1 private operation · B2 private employment · B3 real estate</td></tr>
+        <tr><td>Financial development (C)</td><td>C1 informal finance · C2 formal banking</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Where each indicator comes from</h3>
+  <p style="font-size:0.9rem;">
+    Figure numbers refer to the Ministry of Unification report. Respondent counts are given per
+    period because they vary a great deal between questions, and some are small.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Sub-area</th><th>Indicator</th><th>Source</th><th>n</th><th>n by period</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>A1</code></td><td>Share of output disposed of at market prices</td><td>Fig. II-24</td><td>782</td><td>136 / 128 / 131 / 160 / 227</td></tr>
+        <tr><td><code>A1</code></td><td>Share of inputs procured at market prices</td><td>Fig. II-22</td><td>782</td><td>136 / 128 / 131 / 160 / 227</td></tr>
+        <tr><td><code>A2</code></td><td>Clothing bought at market rather than state prices</td><td>Fig. III-7</td><td>6,351</td><td>683 / 934 / 1,320 / 2,501 / 913</td></tr>
+        <tr><td><code>B1</code></td><td>Local factories under private operation</td><td>Fig. II-91</td><td>3,540</td><td>404 / 499 / 687 / 1,037 / 913</td></tr>
+        <tr><td><code>B1</code></td><td>Central factories under private operation</td><td>Fig. II-92</td><td>3,540</td><td>404 / 499 / 687 / 1,037 / 913</td></tr>
+        <tr><td><code>B1</code></td><td>State shops under private operation</td><td>Fig. II-93</td><td>3,540</td><td>404 / 499 / 687 / 1,037 / 913</td></tr>
+        <tr><td><code>B1</code></td><td>Trading companies under private operation</td><td>Fig. II-96</td><td>3,540</td><td>404 / 499 / 687 / 1,037 / 913</td></tr>
+        <tr><td><code>B2</code></td><td>Has worked for private hire</td><td>Fig. II-77</td><td>3,541</td><td>404 / 499 / 687 / 1,038 / 913</td></tr>
+        <tr><td><code>B2</code></td><td>Has hired others privately</td><td>Fig. II-78</td><td>3,540</td><td>404 / 499 / 687 / 1,037 / 913</td></tr>
+        <tr><td><code>B3</code></td><td>Has sold a home</td><td>Fig. II-80</td><td>5,278</td><td>—</td></tr>
+        <tr><td><code>B3</code></td><td>Has bought a home</td><td>Fig. II-80</td><td>5,278</td><td>—</td></tr>
+        <tr><td><code>C1</code></td><td>Borrowed privately × share borrowed from non-kin</td><td>Fig. II-71 × II-72</td><td>4,367 / 1,399</td><td>499 / 615 / 861 / 1,479 / 913</td></tr>
+        <tr><td><code>C2</code></td><td>Kept spare cash in a bank or savings office</td><td>Fig. II-39</td><td>1,880</td><td>53 / 109 / 284 / 982 / 452</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    Two of these deserve a warning. C2 rests on 53 and 109 respondents in the first two periods, which
+    is too thin to carry much weight. And the report itself cautions that respondents may not recall
+    the share of output sold at market prices at all precisely, which affects A1.
+  </p>
+
+  <h2>How this differs from the 2022 paper</h2>
+  <p>
+    The two indices measure the same concepts from different surveys, and they do not agree
+    everywhere. The differences are worth stating plainly.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th></th><th>Jung, Yang and Kim (2022)</th><th>This index</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Survey</td><td>Korean Association of North Korean Studies, 2016 (n = 842)</td><td>Ministry of Unification, 2024 (n = 6,351)</td></tr>
+        <tr><td>Available to others</td><td>No — microdata unreleased</td><td>Yes — all figures published</td></tr>
+        <tr><td>Periods</td><td>3 (2001–2015)</td><td>5 (before 2000 – 2020)</td></tr>
+        <tr><td>Household prices (A2)</td><td>Experience of price controls at markets</td><td>Substitute: goods bought at market prices</td></tr>
+        <tr><td>Informal finance (C1)</td><td>Borrowed from a <em>donju</em></td><td>Borrowed from any non-kin lender</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The substitution in A2 is forced: the Ministry of Unification survey has no price-control
+    question. It also matters. In the published index, price liberalization <em>falls</em> between
+    2001&ndash;2005 and 2006&ndash;2010, which the paper reads as the marketization crackdown of the
+    late Kim Jong Il years. On the public data it <em>rises</em> over the same span. Both can be
+    right: fewer people reported market purchases being blocked even while more of their purchases
+    happened at market prices. What it shows is that this dimension is sensitive to how household
+    price liberalization is measured, which is a caution for anyone using either number.
+  </p>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    For the same reason the two series should not be spliced into one. Where they overlap they differ
+    by dimension-specific amounts and, in the case of price liberalization, in direction.
+  </p>
+
+  <h2>Citation</h2>
+  <p style="font-size:0.9rem;">Please cite the method paper, and the report the data comes from:</p>
+  <div class="cite-block">
+    Jung, Seungho, Moon-Soo Yang, and Byung-Yeon Kim (2022). &ldquo;Measuring North Korean
+    Marketization: An Index Approach.&rdquo; <em>Asian Perspective</em> 46(2), 195&ndash;223.
+    <a href="https://doi.org/10.1353/apr.2022.0009" target="_blank">https://doi.org/10.1353/apr.2022.0009</a>
+  </div>
+  <pre class="bibtex">@article{jung2022measuring,
+  author  = {Jung, Seungho and Yang, Moon-Soo and Kim, Byung-Yeon},
+  title   = {Measuring North Korean Marketization: An Index Approach},
+  journal = {Asian Perspective},
+  volume  = {46},
+  number  = {2},
+  pages   = {195--223},
+  year    = {2022},
+  doi     = {10.1353/apr.2022.0009}
+}</pre>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    Source data: Ministry of Unification (2024), <em>북한 경제·사회 실태 인식보고서</em>
+    (Report on Economic and Social Conditions in North Korea), Seoul. The index series compiled here is
+    released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>;
+    please credit both this page and the Ministry of Unification report.
+  </p>
+
+  <h2>Updates</h2>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Release</th><th>Coverage</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2026-09</td><td>Before 2000 – 2016–2020</td><td>First release: three dimensions, seven sub-areas, thirteen indicators.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.85rem; color:var(--text-muted);">
+    The index gains a period when a new survey round is published, not on a fixed schedule; the
+    current source stops at those who left in 2020, so the border-closure years are not yet covered.
+    Questions, or corrections: <a href="mailto:shjung@inu.ac.kr">shjung@inu.ac.kr</a>.
+  </p>
+</main>
+
+<footer>
+  &copy; 2026 Seungho Jung &middot; Incheon National University
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data — Seungho Jung (정승호) | Incheon National University</title>
+  <meta name="description" content="Open datasets on the North Korean economy: the GPRNK index of inter-Korean geopolitical risk (monthly, 1995–2025) and the North Korean marketization index (five periods to 2020). Free to download with attribution.">
+  <meta name="keywords" content="North Korea data, GPRNK, 북한 지정학적 위험지수, marketization index, 북한 시장화 지수, open data, Seungho Jung, 정승호">
+  <meta name="author" content="Seungho Jung">
+  <link rel="canonical" href="https://shjpeace-cloud.github.io/academic/data.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data — Seungho Jung (정승호)">
+  <meta property="og:description" content="Open datasets on the North Korean economy: geopolitical risk (GPRNK) and marketization. Free to download with attribution.">
+  <meta property="og:url" content="https://shjpeace-cloud.github.io/academic/data.html">
+  <meta property="og:site_name" content="Seungho Jung — Academic Website">
+  <meta property="og:image" content="https://shjpeace-cloud.github.io/academic/data/gprnk/gprnk-index.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data — Seungho Jung (정승호)">
+  <meta name="twitter:description" content="Open datasets on the North Korean economy: geopolitical risk (GPRNK) and marketization.">
+  <meta name="twitter:image" content="https://shjpeace-cloud.github.io/academic/data/gprnk/gprnk-index.png">
+
+  <link rel="stylesheet" href="style.css?v=20260916a">
+
+  <style>
+    .ds { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2rem; }
+    .ds-thumb { width: 100%; height: auto; display: block; border: 1px solid var(--border);
+      border-radius: 6px; background: var(--surface); margin: 0.9rem 0; }
+    .ds-meta { font-size: 0.85rem; color: var(--text-muted); margin: 0.3rem 0 0.8rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Seungho Jung</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="data.html" class="active">Data</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <h1>Data</h1>
+  <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+    Datasets built for my research on the North Korean economy, released so that others can use and
+    check them. Free to download; please cite the accompanying paper.
+  </p>
+
+  <div class="ds">
+    <h2 style="margin-top:0;"><a href="gprnk.html">GPRNK Index</a></h2>
+    <p class="ds-meta">Monthly · 1995-01 – 2025-10 · 370 observations · CSV, Excel · CC BY 4.0</p>
+    <p>
+      A news-based index of geopolitical risk arising from North Korea, built from article counts in
+      18 South Korean newspapers and broadcasters. It rises around nuclear tests, missile launches and
+      armed clashes, and falls around summits. The release includes the headline index, its negative
+      and positive components, and four subtopic series &mdash; military tensions, sanctions, talks,
+      and economic cooperation.
+    </p>
+    <a href="gprnk.html"><img class="ds-thumb" src="data/gprnk/gprnk-index.png"
+      alt="The GPRNK index plotted monthly from 1995 to 2025, with peaks at nuclear tests and troughs around inter-Korean summits." loading="lazy"></a>
+    <p style="font-size:0.85rem; color:var(--text-muted);">
+      From Lee, Lee and Jung (2026), <em>Applied Economics Letters</em>.
+      <a href="gprnk.html">Open the dataset &rarr;</a>
+    </p>
+  </div>
+
+  <div class="ds">
+    <h2 style="margin-top:0;"><a href="marketization.html">North Korean Marketization Index</a></h2>
+    <p class="ds-meta">Five periods · before 2000 – 2016–2020 · CSV · CC BY 4.0</p>
+    <p>
+      How far the North Korean economy has moved toward the market in three dimensions &mdash; price
+      liberalization, privatization and financial development &mdash; each scored on a five-point
+      scale. It applies the method of Jung, Yang and Kim (2022) to the Ministry of Unification&rsquo;s
+      published survey of 6,351 defectors, so that unlike the original index it can be reproduced
+      from public sources.
+    </p>
+    <a href="marketization.html"><img class="ds-thumb" src="data/marketization/nk-marketization-index.svg"
+      alt="Grouped bars showing price liberalization near 2.9, privatization rising steadily to 1.09, and financial development flat near 0.2, across five periods." loading="lazy"></a>
+    <p style="font-size:0.85rem; color:var(--text-muted);">
+      Method from Jung, Yang and Kim (2022), <em>Asian Perspective</em>.
+      <a href="marketization.html">Open the dataset &rarr;</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Seungho Jung &middot; Incheon National University
+</footer>
+
+</body>
+</html>
