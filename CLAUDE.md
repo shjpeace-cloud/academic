@@ -247,6 +247,7 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 | robots.txt | ✅ Allow all + sitemap | |
 | JSON-LD Person schema | ✅ index.html에 박힘 | knowsAbout 배열에 영/한 키워드 |
 | Open Graph + Twitter Card | ✅ 모든 페이지 head | |
+| **방문 통계 (GoatCounter)** | ✅ 2026-09-17 설치 | 대시보드 `https://shjpeace.goatcounter.com`. 쿠키 없음(동의 배너 불필요). 공개 8페이지 `</body>` 직전 snippet. **새 HTML 페이지를 만들면 snippet도 같이 넣을 것** — `marketization.html`은 `.claude/papers/Marketization/make_page.py`가 생성하므로 스크립트에 포함돼 있음. Cloudflare Web Analytics는 설치 화면이 진행되지 않아 포기 |
 
 **SEO 권위 이전 미완료**: 옛 Google Sites (`sites.google.com/site/shjpeace`) 가 여전히 검색 1위. 5개 페이지에 redirect HTML 박스 적용해야 함 (worklog 2026-04-29 후속 #1).
 
@@ -396,7 +397,6 @@ $d.Close($false); $w.Quit()
 
 | 우선 | 항목 | 비고 |
 |---|---|---|
-| 높 | **Web analytics 셋업** | Cloudflare Web Analytics 권장 (무료, 쿠키 X, GDPR/PIPA 적합). 5개 HTML에 snippet 1줄. 현재 visit 통계 0건 |
 | 높 | **Google Sites redirect** | 옛 사이트 5페이지에 redirect HTML 박스. SEO 권위 이전 — 새 사이트 검색 가시성에 결정적 |
 | 높 | **Google Scholar Homepage URL 변경** | 1분 작업, 인덱싱 가속 |
 | 중 | **INU 학과 페이지 URL 변경 행정 요청** | `inu.ac.kr` 도메인 backlink — SEO 점프 효과 큼 |
