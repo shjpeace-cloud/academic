@@ -244,14 +244,14 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 |---|---|---|
 | Google Search Console | ✅ Verify + sitemap 제출 + 5 URL Request indexing | `google1f7b21bb5170b5de.html` |
 | Naver Search Advisor | ✅ Verify (host repo) + sitemap + 5 URL 수집 요청 | `shjpeace-cloud.github.io` host에 `naver*.html` |
-| Google Scholar | URL 변경 권장 (TODO) | Homepage URL → 새 사이트 |
+| Google Scholar | ✅ Homepage URL = 새 사이트 (2026-09-17 확인) | |
 | sitemap.xml | ✅ 5 URLs, priorities | |
 | robots.txt | ✅ Allow all + sitemap | |
 | JSON-LD Person schema | ✅ index.html에 박힘 | knowsAbout 배열에 영/한 키워드 |
 | Open Graph + Twitter Card | ✅ 모든 페이지 head | |
 | **방문 통계 (GoatCounter)** | ✅ 2026-09-17 설치 | 대시보드 `https://shjpeace.goatcounter.com`. 쿠키 없음(동의 배너 불필요). 공개 8페이지 `</body>` 직전 snippet. **새 HTML 페이지를 만들면 snippet도 같이 넣을 것** — `marketization.html`은 `.claude/papers/Marketization/make_page.py`가 생성하므로 스크립트에 포함돼 있음. Cloudflare Web Analytics는 설치 화면이 진행되지 않아 포기. **조회**: `python .claude/tools/site_stats.py [--days N]` (읽기 전용 API 토큰 = Windows 사용자 환경변수 `GOATCOUNTER_TOKEN`, 저장소에 두지 말 것) |
 
-**SEO 권위 이전 미완료**: 옛 Google Sites (`sites.google.com/site/shjpeace`) 가 여전히 검색 1위. 5개 페이지에 redirect HTML 박스 적용해야 함 (worklog 2026-04-29 후속 #1).
+**SEO 권위 이전**: 옛 Google Sites (`sites.google.com/site/shjpeace`)에 새 사이트 안내 링크 적용 완료 (2026-09-17, 외부에서 링크 4건 확인). Search Console에 data·gprnk·marketization 색인 요청 + sitemap 재제출 완료 (사용자, 2026-09-17). 검색 순위 역전 여부는 몇 주 뒤 확인.
 
 ---
 
@@ -399,8 +399,6 @@ $d.Close($false); $w.Quit()
 
 | 우선 | 항목 | 비고 |
 |---|---|---|
-| 높 | **Google Sites redirect** | 옛 사이트 5페이지에 redirect HTML 박스. SEO 권위 이전 — 새 사이트 검색 가시성에 결정적 |
-| 높 | **Google Scholar Homepage URL 변경** | 1분 작업, 인덱싱 가속 |
 | 중 | **INU 학과 페이지 URL 변경 행정 요청** | `inu.ac.kr` 도메인 backlink — SEO 점프 효과 큼 |
 | 중 | **OneDrive `.git/` 충돌 모니터링** | 두 PC 동시 작업 X 룰 유지. `.git/index.lock` / HEAD conflict copy 발견 시 룰 강화 |
 | 중 | **3-tier rule cadence 재검토 (~2026-12)** | publication 빈도 변화 시 cutoff 3개월이 적절한지. 모든 카드가 항상 Tier 1이면 ongoing 표시 기회 사라짐 |
