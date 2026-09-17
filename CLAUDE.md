@@ -245,6 +245,7 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 | Google Search Console | ✅ Verify + sitemap 제출 + 5 URL Request indexing | `google1f7b21bb5170b5de.html` |
 | Naver Search Advisor | ✅ Verify (host repo) + sitemap + 5 URL 수집 요청 | `shjpeace-cloud.github.io` host에 `naver*.html` |
 | Google Scholar | ✅ Homepage URL = 새 사이트 (2026-09-17 확인) | |
+| INU 학과 교수 페이지 | ✅ 새 사이트 링크 (2026-09-17 확인) | `ibe.inu.ac.kr/profl/ibe/1655/6508/artclView.do` → `/academic/index.html` (canonical이 `/academic/`로 정리) |
 | sitemap.xml | ✅ 5 URLs, priorities | |
 | robots.txt | ✅ Allow all + sitemap | |
 | JSON-LD Person schema | ✅ index.html에 박힘 | knowsAbout 배열에 영/한 키워드 |
@@ -399,7 +400,6 @@ $d.Close($false); $w.Quit()
 
 | 우선 | 항목 | 비고 |
 |---|---|---|
-| 중 | **INU 학과 페이지 URL 변경 행정 요청** | `inu.ac.kr` 도메인 backlink — SEO 점프 효과 큼 |
 | 중 | **OneDrive `.git/` 충돌 모니터링** | 두 PC 동시 작업 X 룰 유지. `.git/index.lock` / HEAD conflict copy 발견 시 룰 강화 |
 | 중 | **3-tier rule cadence 재검토 (~2026-12)** | publication 빈도 변화 시 cutoff 3개월이 적절한지. 모든 카드가 항상 Tier 1이면 ongoing 표시 기회 사라짐 |
 | 낮 | **Scheduler missed runs 재발 시** | Operational log enabled 상태. `Get-WinEvent -LogName 'Microsoft-Windows-TaskScheduler/Operational'`로 raw evidence 확보 |
