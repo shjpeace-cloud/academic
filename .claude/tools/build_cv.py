@@ -62,7 +62,9 @@ ROOT = Path(__file__).resolve().parents[2]
 PUBS = ROOT / "data" / "publications.json"
 OUTDIR = ROOT / ".claude" / "cv"
 
-NAME = "SEUNG-HO JUNG"
+# Spelled as on the publications, ORCID and the site, so readers and search
+# engines connect the CV to the same person.
+NAME = "SEUNGHO JUNG"
 ADDRESS = [
     "Building 14C, office 327",
     "119, Academy-ro, Yeonsu-gu, Incheon, 22012, KOREA",
@@ -74,9 +76,9 @@ EMAILS = "shjung@inu.ac.kr, shjpeace@gmail.com"
 
 EXPERIENCE = [
     ("Assistant / Associate Professor, School of Northeast Asian Studies, "
-     "Incheon National University", "2019~Present"),
-    ("Economist, Economic Research Institute, Bank of Korea", "2014~2019"),
-    ("Researcher, Korea Institute for International Economic Policy", "2005~2007"),
+     "Incheon National University", "2019–present"),
+    ("Economist, Economic Research Institute, Bank of Korea", "2014–2019"),
+    ("Researcher, Korea Institute for International Economic Policy", "2005–2007"),
 ]
 
 EDUCATION = [
@@ -104,10 +106,8 @@ INTERESTS = ("North Korean economy; North Korean foreign economic relations, "
 SELECTED = [56, 48, 37, 38, 24, 21]
 
 # Trailing note for an entry, where the entry needs one.
-PUB_NOTES = {
-    21: "GPRNK index available at policyuncertainty.com/korea_gpr and at "
-        "shjpeace-cloud.github.io/academic/gprnk.html",
-}
+# (GPRNK's download links now live in the Data section instead.)
+PUB_NOTES = {}
 
 # Public datasets, one bullet each. The check below looks for each page name,
 # so a dataset added here flags the published PDF as stale until it is rebuilt.
@@ -133,9 +133,24 @@ def en(s):
     return s.replace("-", "–") if s else s
 
 
-def cite(p: dict) -> str:
-    """One Selected-Publications line. Mirrors how cv.html renders these."""
-    authors = p["authors"]
+def author_list(authors: str) -> str:
+    """'Last, First, A B, C D' with a serial 'and' before the last name, however
+    publications.json happened to write it (some entries carry the 'and',
+    some do not)."""
+    parts = [x.strip() for x in authors.split(",")]
+    if len(parts) < 2 or any("가" <= ch <= "힣" for ch in authors):
+        return authors                         # single name, or Korean
+    names = [f"{parts[0]}, {parts[1]}"]
+    names += [x[4:] if x.startswith("and ") else x for x in parts[2:] if x]
+    if len(names) == 1:
+        return names[0]
+    return ", ".join(names[:-1]) + ", and " + names[-1]
+
+
+def cite(p: dict) -> list:
+    """One Selected-Publications line as (text, italic) runs, so the journal
+    name can be set in italics. Mirrors how cv.html renders these."""
+    authors = author_list(p["authors"])
     if p.get("corresponding"):
         for n in ("Jung, Seungho", "Seungho Jung"):
             i = authors.find(n)
@@ -143,21 +158,23 @@ def cite(p: dict) -> str:
                 authors = authors[:i + len(n)] + "*" + authors[i + len(n):]
                 break
 
-    line = f'{authors}. {p["year"]}. “{p["title"]}.” {p["journal"]}'
+    tail = ""
     if p.get("volume") and p.get("issue"):
-        line += f', {p["volume"]}({p["issue"]})'
+        tail += f', {p["volume"]}({p["issue"]})'
     elif p.get("volume"):
-        line += f', {p["volume"]}'
+        tail += f', {p["volume"]}'
     elif p.get("note"):
-        line += f', {p["note"]}'
+        tail += f', {p["note"]}'
     if p.get("pages"):
-        line += f', {en(p["pages"])}'
-    line += "."
+        tail += f', {en(p["pages"])}'
+    tail += "."
     if p.get("corresponding"):
-        line += " *Corresponding author."
+        tail += " *Corresponding author."
     if PUB_NOTES.get(p["id"]):
-        line += f' ({PUB_NOTES[p["id"]]})'
-    return line
+        tail += f' ({PUB_NOTES[p["id"]]})'
+    return [(f'{authors}. {p["year"]}. “{p["title"]}.” ', False),
+            (p["journal"], True),
+            (tail, False)]
 
 
 def setup(doc):
@@ -224,7 +241,13 @@ def dated(doc, left, right, *, indent=0.18):
 
 
 def bullet(doc, text, *, indent=0.36):
-    para(doc, "•  " + text, indent=indent, hanging=0.18, space_before=2)
+    """text is a string, or a list of (text, italic) runs."""
+    runs = [(text, False)] if isinstance(text, str) else text
+    p = para(doc, indent=indent, hanging=0.18, space_before=2)
+    for i, (t, italic) in enumerate(runs):
+        r = p.add_run(("•  " if i == 0 else "") + t)
+        r.italic = italic
+        r.font.size = Pt(10)
 
 
 def build(doc, pubs):
