@@ -139,7 +139,7 @@ GPRNK 지수(Lee·Lee·Jung 2026, *Applied Economics Letters*) 공개 페이지.
 
 ### `teaching.html` / `cv.html`
 - `cv.html`: 학력(B.Agr. Korea Univ. 2001 / MPP KDI School 2003 / Ph.D. SNU 2014), 경력(BoK Economist 2014–2019, KIEP Researcher 2005–2007 등), Honors and Awards, Selected Publications(6건 + DOI 링크), 최신 `data/CV_Seung-Ho_JUNG(YYYYMMDD).pdf` 다운로드 (URL-encoded `%28%29`)
-- **Honors and Awards** (2026-09-17 신설): 인천대 총장표창 — 학술연구상 3회(2021·2022·2024년도, 수여 2022·2023·2025), 우수강의상 1회(2024-2학기, 수여 2025). 연도 열은 **수여 연도**, 대상 연도는 본문에 표기. 원자료는 학교 포상사항 엑셀(루트, `/*.xlsx`로 gitignore — 내부 문서번호 포함이라 공개 금지). 새 수상 시 `cv.html`과 `build_cv.py`의 `AWARDS` **둘 다** 수정 후 PDF 재생성
+- **Honors and Awards** (2026-09-17 신설): 인천대 총장표창을 **상 기준으로 묶어** 한 줄씩 — 학술연구상 (2021, 2022, 2024) / 우수강의상 (Fall 2024). 괄호 연도는 **대상 연도**(수여는 2022·2023·2025·2025). 위치: 웹 CV는 Selected Publications 아래(Contact 위), PDF는 맨 아래(Teaching 다음). 원자료는 학교 포상사항 엑셀(루트, `/*.xlsx`로 gitignore — 내부 문서번호 포함이라 공개 금지). 새 수상 시 `cv.html`과 `build_cv.py`의 `AWARDS` **둘 다** 수정 후 PDF 재생성
 
 ---
 
