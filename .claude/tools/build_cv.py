@@ -88,6 +88,16 @@ EDUCATION = [
     ("Bachelor of Agriculture, Korea University", "2001", None),
 ]
 
+# University President's commendations, newest first. Source: INU award record
+# (포상사항 export, 2026-09-17). The year is when the award was given; the
+# text names the year it recognises.
+AWARDS = [
+    ("Research Excellence Award (for 2024), Incheon National University", "2025"),
+    ("Excellent Teaching Award (Fall 2024), Incheon National University", "2025"),
+    ("Research Excellence Award (for 2022), Incheon National University", "2023"),
+    ("Research Excellence Award (for 2021), Incheon National University", "2022"),
+]
+
 INTERESTS = ("North Korean economy; North Korean foreign economic relations, "
              "particularly with China and Russia; unification and economic "
              "integration; economic adaptation of North Korean refugees")
@@ -236,6 +246,10 @@ def build(doc, pubs):
         dated(doc, what, when)
         if sub:
             para(doc, sub, size=9, indent=0.36)
+
+    heading(doc, "Honors and Awards")
+    for what, when in AWARDS:
+        dated(doc, what, when)
 
     heading(doc, "Research Interests")
     bullet(doc, INTERESTS)

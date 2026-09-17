@@ -58,4 +58,5 @@ __pycache__/
 /*.doc
 /*.hwp
 /*.hwpx
+/*.xlsx
 /scratch_*.txt
