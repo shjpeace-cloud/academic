@@ -109,16 +109,20 @@ PUB_NOTES = {
         "shjpeace-cloud.github.io/academic/gprnk.html",
 }
 
-DATA_RELEASE = (
-    "GPRNK — Geopolitical Risk Index for North Korea. Monthly, 1995–present. "
-    "Free download at shjpeace-cloud.github.io/academic/gprnk.html"
-)
+# Public datasets, one bullet each. The check below looks for each page name,
+# so a dataset added here flags the published PDF as stale until it is rebuilt.
+DATA_RELEASES = [
+    ("GPRNK — Geopolitical Risk Index for North Korea. Monthly, 1995–present. "
+     "Free download at shjpeace-cloud.github.io/academic/gprnk.html"),
+    ("North Korean Marketization Index — price liberalization, privatization and "
+     "financial development, five periods to 2020, rebuilt from public survey data. "
+     "Free download at shjpeace-cloud.github.io/academic/marketization.html"),
+]
 
 TEACHING = [
     "Understanding North Korea’s Economic System and Transition",
     "Development Economics, Economic Growth of South Korea",
-    "Statistics for Economics, Time Series Analysis, Principle of Economics",
-    "Econometrics",
+    "Principles of Economics, Statistics for Economics, Econometrics, Time Series Analysis",
 ]
 
 RIGHT_TAB = Inches(6.5)
@@ -256,12 +260,9 @@ def build(doc, pubs):
     for i in SELECTED:
         bullet(doc, cite(by_id[i]))
 
-    # Set apart from the bullets, or it reads as part of the last entry.
-    para(doc, "See shjpeace-cloud.github.io/academic/publications.html for the "
-              "complete list.", size=9, italic=True, indent=0.18, space_before=5)
-
     heading(doc, "Data")
-    bullet(doc, DATA_RELEASE)
+    for release in DATA_RELEASES:
+        bullet(doc, release)
 
     heading(doc, "Teaching")
     for course in TEACHING:
@@ -342,8 +343,11 @@ def check(pubs) -> int:
 
     # Career facts live in the constants, not in any data file; the most a
     # check can do is notice the PDF no longer says what they say.
-    for label, value in [("site", SITE.rstrip("/")), ("ORCID", ORCID),
-                         ("position", EXPERIENCE[0][0][:40])]:
+    facts = [("site", SITE.rstrip("/")), ("ORCID", ORCID),
+             ("position", EXPERIENCE[0][0][:40])]
+    facts += [("data", re.search(r"academic/(\S+\.html)", d).group(1))
+              for d in DATA_RELEASES]
+    for label, value in facts:
         if squash(value) not in text:
             stale.append(f"{label} in the PDF differs from the constants here")
 
