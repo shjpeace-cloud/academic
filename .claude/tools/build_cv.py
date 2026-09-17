@@ -92,8 +92,8 @@ EDUCATION = [
 # record (포상사항 export, 2026-09-17). Years are the years each award
 # recognises, not the years it was given (2022, 2023, 2025 / 2025).
 AWARDS = [
-    "Research Excellence Award, Incheon National University (2021, 2022, 2024)",
-    "Excellent Teaching Award, Incheon National University (Fall 2024)",
+    ("Research Excellence Award, Incheon National University", "2021, 2022, 2024"),
+    ("Excellent Teaching Award (Fall semester), Incheon National University", "2024"),
 ]
 
 INTERESTS = ("North Korean economy; North Korean foreign economic relations, "
@@ -268,8 +268,8 @@ def build(doc, pubs):
         para(doc, course, indent=0.36, space_before=2)
 
     heading(doc, "Honors and Awards")
-    for award in AWARDS:
-        para(doc, award, indent=0.36, space_before=2)
+    for what, when in AWARDS:
+        dated(doc, what, when)
 
 
 # Dash and quote variants that mean the same thing to a reader but not to
