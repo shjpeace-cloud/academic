@@ -80,7 +80,9 @@ academic/
     ├── settings.json        ← Stop hook (auto-push) — repo에 commit
     ├── gprnk-workspace/     ← GPRNK 릴리스 워크스페이스 (README + build_gprnk.py + rebuild_gprnk.py)
     ├── tools/
-    │   └── build_publications.py  ← publications.json → publications.html 정적 fallback 생성
+    │   ├── build_publications.py  ← publications.json → publications.html 정적 fallback 생성
+    │   ├── build_cv.py            ← CV docx 생성 (Word로 PDF 내보내기) + `--check`
+    │   └── site_stats.py          ← GoatCounter 방문 통계 조회
     ├── settings.local.json  ← 개인 권한 (gitignored)
     ├── auto-push.sh         ← auto-commit/push 스크립트
     ├── worklog/             ← 작업 일지 (gitignored, OneDrive 동기화로만 보존)
@@ -247,7 +249,7 @@ EAI(동아시아연구원)는 같은 글을 `commentary-en` (Global NK) + `comme
 | robots.txt | ✅ Allow all + sitemap | |
 | JSON-LD Person schema | ✅ index.html에 박힘 | knowsAbout 배열에 영/한 키워드 |
 | Open Graph + Twitter Card | ✅ 모든 페이지 head | |
-| **방문 통계 (GoatCounter)** | ✅ 2026-09-17 설치 | 대시보드 `https://shjpeace.goatcounter.com`. 쿠키 없음(동의 배너 불필요). 공개 8페이지 `</body>` 직전 snippet. **새 HTML 페이지를 만들면 snippet도 같이 넣을 것** — `marketization.html`은 `.claude/papers/Marketization/make_page.py`가 생성하므로 스크립트에 포함돼 있음. Cloudflare Web Analytics는 설치 화면이 진행되지 않아 포기 |
+| **방문 통계 (GoatCounter)** | ✅ 2026-09-17 설치 | 대시보드 `https://shjpeace.goatcounter.com`. 쿠키 없음(동의 배너 불필요). 공개 8페이지 `</body>` 직전 snippet. **새 HTML 페이지를 만들면 snippet도 같이 넣을 것** — `marketization.html`은 `.claude/papers/Marketization/make_page.py`가 생성하므로 스크립트에 포함돼 있음. Cloudflare Web Analytics는 설치 화면이 진행되지 않아 포기. **조회**: `python .claude/tools/site_stats.py [--days N]` (읽기 전용 API 토큰 = Windows 사용자 환경변수 `GOATCOUNTER_TOKEN`, 저장소에 두지 말 것) |
 
 **SEO 권위 이전 미완료**: 옛 Google Sites (`sites.google.com/site/shjpeace`) 가 여전히 검색 1위. 5개 페이지에 redirect HTML 박스 적용해야 함 (worklog 2026-04-29 후속 #1).
 
