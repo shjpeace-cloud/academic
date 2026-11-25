@@ -37,21 +37,21 @@ Enterprise (A1) 0.97 · Household (A2) 4.70</title><circle cx="513.0" cy="155.1"
 Enterprise (A1) 1.18 · Household (A2) 4.64</title><circle cx="647.0" cy="150.9" r="4.5" fill="#34689c" stroke="#ffffff" stroke-width="2"/></g>
 <text x="714" y="138.9" text-anchor="end" font-size="12" fill="#34689c" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">Price liberalization 2.91</text>
 <path d="M111.0,297.6 L245.0,293.2 L379.0,284.2 L513.0,267.1 L647.0,249.0" fill="none" stroke="#b8862a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<g class="mkt-bar"><title>Before 2000 — Privatization: 0.193
+<g class="mkt-bar"><title>Before 2000 — De facto privatization: 0.193
 Private operation (B1) 0.30 · Private employment (B2) 0.14 · Real estate (B3) 0.14</title><circle cx="111.0" cy="297.6" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
 <text x="111.0" y="286.6" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.19</text>
-<g class="mkt-bar"><title>2001–2005 — Privatization: 0.274
+<g class="mkt-bar"><title>2001–2005 — De facto privatization: 0.274
 Private operation (B1) 0.40 · Private employment (B2) 0.20 · Real estate (B3) 0.22</title><circle cx="245.0" cy="293.2" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
 <text x="245.0" y="282.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.27</text>
-<g class="mkt-bar"><title>2006–2010 — Privatization: 0.440
+<g class="mkt-bar"><title>2006–2010 — De facto privatization: 0.440
 Private operation (B1) 0.67 · Private employment (B2) 0.31 · Real estate (B3) 0.34</title><circle cx="379.0" cy="284.2" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
 <text x="379.0" y="273.2" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.44</text>
-<g class="mkt-bar"><title>2011–2015 — Privatization: 0.757
+<g class="mkt-bar"><title>2011–2015 — De facto privatization: 0.757
 Private operation (B1) 1.12 · Private employment (B2) 0.58 · Real estate (B3) 0.57</title><circle cx="513.0" cy="267.1" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
 <text x="513.0" y="256.1" text-anchor="middle" font-size="11.5" fill="#6b6b6b" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">0.76</text>
-<g class="mkt-bar"><title>2016–2020 — Privatization: 1.093
+<g class="mkt-bar"><title>2016–2020 — De facto privatization: 1.093
 Private operation (B1) 1.59 · Private employment (B2) 0.80 · Real estate (B3) 0.90</title><circle cx="647.0" cy="249.0" r="4.5" fill="#b8862a" stroke="#ffffff" stroke-width="2"/></g>
-<text x="714" y="237.0" text-anchor="end" font-size="12" fill="#b8862a" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">Privatization 1.09</text>
+<text x="714" y="237.0" text-anchor="end" font-size="12" fill="#b8862a" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">De facto privatization 1.09</text>
 <path d="M111.0,296.8 L245.0,301.4 L379.0,299.2 L513.0,299.1 L647.0,292.7" fill="none" stroke="#94518c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <g class="mkt-bar"><title>Before 2000 — Financial development: 0.208
 Informal finance (C1) 0.13 · Formal banking (C2) 0.28</title><circle cx="111.0" cy="296.8" r="4.5" fill="#94518c" stroke="#ffffff" stroke-width="2"/></g>
@@ -76,9 +76,9 @@ Informal finance (C1) 0.42 · Formal banking (C2) 0.14</title><circle cx="647.0"
 <rect x="44" y="364" width="10" height="10" rx="2" fill="#34689c"/>
 <text x="59" y="373" font-size="13" fill="#6b6b6b">Price liberalization</text>
 <rect x="227.0" y="364" width="10" height="10" rx="2" fill="#b8862a"/>
-<text x="242.0" y="373" font-size="13" fill="#6b6b6b">Privatization</text>
-<rect x="360.3" y="364" width="10" height="10" rx="2" fill="#94518c"/>
-<text x="375.3" y="373" font-size="13" fill="#6b6b6b">Financial development</text>
+<text x="242.0" y="373" font-size="13" fill="#6b6b6b">De facto privatization</text>
+<rect x="424.2" y="364" width="10" height="10" rx="2" fill="#94518c"/>
+<text x="439.2" y="373" font-size="13" fill="#6b6b6b">Financial development</text>
 <text x="35" y="16" text-anchor="end" font-size="11.5" fill="#6b6b6b">score</text>
 <text x="726" y="16" font-size="11" fill="#8b8981">share of respondents</text>
 </svg>
