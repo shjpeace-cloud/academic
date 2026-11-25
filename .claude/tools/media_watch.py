@@ -35,6 +35,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -112,9 +113,16 @@ def google(query: str, lang: str) -> list[dict]:
 
 
 def naver(query: str, cid: str, secret: str) -> list[dict]:
-    url = ("https://openapi.naver.com/v1/search/news.json?display=50&sort=date&query="
-           + urllib.parse.quote(query))
-    s = get(url, {"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": secret})
+    # New keys come from NAVER API HUB (Naver Cloud Platform): Naver Developers
+    # stopped issuing Search API keys on 2026-07-31, and old keys work only until
+    # 2027-06-30. Try the HUB endpoint first, then the legacy one.
+    qs = "?display=50&sort=date&query=" + urllib.parse.quote(query)
+    try:
+        s = get("https://naverapihub.apigw.ntruss.com/search/v1/news" + qs,
+                {"X-NCP-APIGW-API-KEY-ID": cid, "X-NCP-APIGW-API-KEY": secret})
+    except urllib.error.HTTPError:
+        s = get("https://openapi.naver.com/v1/search/news.json" + qs,
+                {"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": secret})
     out = []
     for it in json.loads(s).get("items", []):
         title = html.unescape(re.sub(r"<[^>]+>", "", it["title"]))
