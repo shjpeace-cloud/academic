@@ -182,6 +182,17 @@ GPRNK 지수(Lee·Lee·Jung 2026, *Applied Economics Letters*) 공개 페이지.
 | `working-paper` | Working Paper (BOK 경제연구, IMF WP 등) |
 | `book` | 단행본 / 챕터 |
 
+### `data/media.json` (2026-11-25)
+
+언론 보도·강연 목록. **publications.json에 넣지 않는다** — 평가자가 읽는 실적 목록을 깨끗하게 두고, research-interests.js가 기사를 카드 "Latest"로 고르지 않게 하려는 것.
+`publications.html` 맨 아래 "Media & Talks" 섹션(`#media`)으로 **정적 생성**(JS 없음, 필터 영향 없음). 추가 후 `python .claude/tools/build_publications.py` 실행.
+
+```json
+{ "date": "2026-03-26", "outlet": "연합뉴스", "title": "...", "kind": "Commentary coverage",
+  "note": "어떤 글·발표가 계기인지", "url": "..." }
+```
+kind: `Commentary coverage` / `Talk coverage` / `Research cited` / `Interview` / `TV commentary` / `Video lecture` / `Mentioned`. 별도 메뉴 페이지는 ~20건 쌓이면 검토 (사용자 2026-11-25 "지금은 오버").
+
 ### `data/current-projects.json`
 
 배열. `research.html`의 Current Projects 섹션 자동 렌더용.
