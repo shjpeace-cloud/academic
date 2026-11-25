@@ -192,6 +192,7 @@ GPRNK 지수(Lee·Lee·Jung 2026, *Applied Economics Letters*) 공개 페이지.
   "note": "어떤 글·발표가 계기인지", "url": "..." }
 ```
 kind: `Commentary coverage` / `Talk coverage` / `Research cited` / `Interview` / `TV commentary` / `Video lecture` / `Mentioned`. 별도 메뉴 페이지는 ~20건 쌓이면 검토 (사용자 2026-11-25 "지금은 오버").
+**기사 찾기**: `python .claude/tools/media_watch.py` — Google News RSS(한·영, 이름+소속 동시 포함 검색어만) + 네이버 뉴스 API(환경변수 `NAVER_CLIENT_ID`/`NAVER_CLIENT_SECRET` 있으면, 본문에서 정승호+인천대 대조). 새 후보만 `.claude/media_watch/candidates.md`(gitignored)에 append, 본 것은 `seen.json`. **사이트에 자동 추가 안 함** — 사용자가 골라야 media.json에 넣는다. 작업 스케줄러 등록은 안 함(사용자 선택 2026-11-25) → "기사 검색해줘" 요청 시 실행.
 
 ### `data/current-projects.json`
 

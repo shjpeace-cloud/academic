@@ -60,3 +60,6 @@ __pycache__/
 /*.hwpx
 /*.xlsx
 /scratch_*.txt
+
+# media_watch.py state and candidate list (news search results, local only)
+.claude/media_watch/
