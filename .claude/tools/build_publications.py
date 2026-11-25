@@ -27,7 +27,7 @@ The formatting here mirrors formatPub/buildLinks/renderSection in
 publications.html. Change one and you must change the other; --check catches a
 stale block but not a divergent formatter.
 
-Run this after editing publications.json, before committing.
+Run this after editing publications.json or media.json, before committing.
 """
 
 import argparse
@@ -39,11 +39,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 JSON_PATH = ROOT / "data" / "publications.json"
+MEDIA_PATH = ROOT / "data" / "media.json"
 HTML_PATH = ROOT / "publications.html"
 
 BEGIN = ("    <!-- BEGIN generated from data/publications.json by "
          ".claude/tools/build_publications.py — do not edit by hand -->")
 END = "    <!-- END generated -->"
+
+# Media & Talks: press coverage and public talks, kept out of publications.json
+# on purpose -- the list evaluators read stays research output only, and
+# research-interests.js never scores a news article as a card's "Latest".
+# Static only (no JS): it sits after #pub-list, so the filters do not touch it.
+MEDIA_BEGIN = ("  <!-- BEGIN media generated from data/media.json by "
+               ".claude/tools/build_publications.py — do not edit by hand -->")
+MEDIA_END = "  <!-- END media -->"
 
 SECTION_LABELS = {
     "journal-en": "Peer-reviewed Articles (English)",
@@ -190,6 +199,41 @@ def render(pubs: list) -> str:
     return "\n".join(out)
 
 
+def fmt_date(d: str) -> str:
+    """2026-03-26 -> 2026.3.26; 2022-01 -> 2022.1"""
+    parts = d.split("-")
+    return ".".join([parts[0]] + [str(int(x)) for x in parts[1:]])
+
+
+def render_media(items: list) -> str:
+    out = [MEDIA_BEGIN,
+           '  <section class="pub-section media-section" id="media">',
+           '    <div class="pub-section-title">Media &amp; Talks</div>',
+           '    <p class="media-intro">Press coverage of my research and commentary, '
+           'and public talks.</p>']
+    for m in sorted(items, key=lambda m: m["date"], reverse=True):
+        line = (f'{fmt_date(m["date"])}. <em>{text(m["outlet"])}</em>. '
+                f'<a href="{attr(m["url"])}" target="_blank" rel="noopener">'
+                f'{text(m["title"])}</a>.')
+        if m.get("note"):
+            line += f' <span class="media-note">{text(m["note"])}</span>'
+        out.append('    <div class="pub-item">')
+        out.append(f'      <span class="media-kind">{text(m["kind"])}</span> {line}')
+        out.append('    </div>')
+    out.append('  </section>')
+    out.append(MEDIA_END)
+    return "\n".join(out)
+
+
+def splice_media(page: str, block: str) -> str:
+    if MEDIA_BEGIN in page:
+        start = page.index(MEDIA_BEGIN)
+        end = page.index(MEDIA_END) + len(MEDIA_END)
+        return page[:start] + block + page[end:]
+    i = page.index("</main>")       # first run: just before </main>
+    return page[:i] + block + "\n" + page[i:]
+
+
 def splice(page: str, block: str) -> str:
     """Put the block inside #pub-list, replacing any previous one."""
     if BEGIN in page:
@@ -219,6 +263,9 @@ def main():
     page = HTML_PATH.read_text(encoding="utf-8")
     block = render(pubs)
     updated = splice(page, block)
+    if MEDIA_PATH.exists():
+        media = json.loads(MEDIA_PATH.read_text(encoding="utf-8"))
+        updated = splice_media(updated, render_media(media))
 
     counted = sum(1 for p in pubs if p.get("type") in SECTION_ORDER)
     if counted != len(pubs):
